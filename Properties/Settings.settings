@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OLKI.Programme.all2one.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExistingFile_Handle" Roaming="true" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ExistingFile_AddText" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExistingFile_DateFormat" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">yyyyMMddHHmmss</Value>
+    </Setting>
+    <Setting Name="Move_RemainTimeDays" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dd\.hh\:mm\:ss</Value>
+    </Setting>
+    <Setting Name="Move_RemainTimeNoDays" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hh\:mm\:ss</Value>
+    </Setting>
+    <Setting Name="Internal_SettingsUpgradet" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
