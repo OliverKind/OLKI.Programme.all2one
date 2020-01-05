@@ -47,10 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Changelog.xaml.cs">
-      <DependentUpon>Changelog.txt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="src\FileMover\clsFileMover.Move.cs" />
     <Compile Include="src\FileMover\clsFileMover.cs" />
     <Compile Include="src\FileMover\clsFileMover.Count.cs" />
@@ -86,6 +82,13 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="CONTRIBUTING.md" />
+    <Content Include="doc\Eula.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc\Information.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="installation\setup__all2one.nsi" />
     <None Include="LICENSE" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -111,6 +114,9 @@
   <ItemGroup>
     <Content Include="Changelog.txt">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="doc\ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
