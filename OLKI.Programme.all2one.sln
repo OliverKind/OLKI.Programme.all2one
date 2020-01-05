@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "all2one", "all2one.csproj", "{FC5F9FB3-729C-4B30-813D-CE9047A30B0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OLKI.Programme.all2one", "OLKI.Programme.all2one.csproj", "{FC5F9FB3-729C-4B30-813D-CE9047A30B0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OLKI.Tools.CommonTools", "..\..\..\OLKI.Tools\CommonTools\repository\OLKI.Tools.CommonTools.csproj", "{EACF8CEE-E449-4591-AAF1-ECDDA827AD8A}"
 EndProject

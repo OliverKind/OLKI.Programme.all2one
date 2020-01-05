@@ -110,10 +110,9 @@ namespace OLKI.Programme.all2one
         #region Form events
         private void MainForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("ABOUT", "all2one", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //About AboutForm = new About();
-            //AboutForm.ShowDialog(this);
-            //AboutForm.Dispose();
+            AboutForm AboutForm = new AboutForm();
+            AboutForm.ShowDialog(this);
+            AboutForm.Dispose();
             e.Cancel = true;
         }
 
