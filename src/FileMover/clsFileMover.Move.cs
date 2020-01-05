@@ -101,6 +101,15 @@ namespace OLKI.Programme.all2one
                         return false;
                     }
 
+                    if (HandleFile.RememberAction)
+                    {
+                        Settings.Default.ExistingFile_AddText = HandleFile.AddText;
+                        Settings.Default.ExistingFile_Handle = (int)HandleFile.SelectedAction;
+                        Settings.Default.Save();
+
+                        this.ExistingFileSettingsChanged?.Invoke(this, new EventArgs());
+                    }
+
                     //Handle overwrite state
                     switch (HandleFile.OverwriteFile)
                     {

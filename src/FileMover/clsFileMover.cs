@@ -38,6 +38,10 @@ namespace OLKI.Programme.all2one
         private const double PROGRESS_UPDATE_INTERVALL = 0.1;
         #endregion
 
+        #region Events
+        public event EventHandler ExistingFileSettingsChanged;
+        #endregion
+
         #region Enums
         /// <summary>
         /// An enomeration to indicate the step of an process

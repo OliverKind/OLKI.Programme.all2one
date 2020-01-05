@@ -128,6 +128,12 @@ namespace OLKI.Programme.all2one
             }
         }
 
+        private void FileMover_ExistingFileSettingsChanged(object sender, EventArgs e)
+        {
+            this.SetExistingFileTextBoxes(null);
+        }
+
+
         #region Controle Buttons
         private void btnProcessCancel_Click(object sender, EventArgs e)
         {
@@ -245,7 +251,8 @@ namespace OLKI.Programme.all2one
             this.btnProcessPause.Enabled = false;
             this.btnProcessCancel.Enabled = false;
         }
-        #endregion
+
+            #endregion
         #endregion
     }
 }
