@@ -23,6 +23,7 @@
  * */
 
 using OLKI.Programme.all2one.Properties;
+using OLKI.Programme.all2one.src;
 using OLKI.Tools.CommonTools;
 using OLKI.Tools.CommonTools.DirectoryAndFile;
 using OLKI.Widgets.Invoke;
@@ -250,9 +251,10 @@ namespace OLKI.Programme.all2one
             this.btnProcessStart.Enabled = true;
             this.btnProcessPause.Enabled = false;
             this.btnProcessCancel.Enabled = false;
-        }
 
-            #endregion
+            MessageBox.Show(this, string.Format(Stringtable._0x00002m, new object[] { this._fileMover.FileTotalCount, this._fileMover.FileMove, this._fileMover.FileSkip, this._fileMover.FileExceptions }), Stringtable._0x00002c, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        #endregion
         #endregion
     }
 }
