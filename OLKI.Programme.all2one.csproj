@@ -53,7 +53,7 @@
     <Compile Include="src\FileMover\clsFileMover.Move.cs" />
     <Compile Include="src\FileMover\clsFileMover.cs" />
     <Compile Include="src\FileMover\clsFileMover.Count.cs" />
-    <Compile Include="src\FileMover\Stringtable.Designer.cs">
+    <Compile Include="src\Stringtable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Stringtable.resx</DependentUpon>
@@ -87,7 +87,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\FileMover\Stringtable.resx">
+    <EmbeddedResource Include="src\Stringtable.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Stringtable.Designer.cs</LastGenOutput>
     </EmbeddedResource>

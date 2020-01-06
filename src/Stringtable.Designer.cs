@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OLKI.Programme.all2one.src.FileMover {
+namespace OLKI.Programme.all2one.src {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace OLKI.Programme.all2one.src.FileMover {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.all2one.src.FileMover.Stringtable", typeof(Stringtable).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.all2one.src.Stringtable", typeof(Stringtable).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -77,6 +77,36 @@ namespace OLKI.Programme.all2one.src.FileMover {
         internal static string _0x00001m {
             get {
                 return ResourceManager.GetString("0x00001m", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Vorgang abgeschlossen. ähnelt.
+        /// </summary>
+        internal static string _0x00002c {
+            get {
+                return ResourceManager.GetString("0x00002c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Der Vorgang wurde beendet.
+        ///
+        ///
+        ///Zusammenfassung:
+        ///
+        ///Zu verschiebende Dateien:
+        ///    {0}
+        ///Verschobene Dateien:
+        ///    {1}
+        ///Übersprungene Dateien:
+        ///    {2}
+        ///Fehler beim Verschieben:
+        ///    {3} ähnelt.
+        /// </summary>
+        internal static string _0x00002m {
+            get {
+                return ResourceManager.GetString("0x00002m", resourceCulture);
             }
         }
     }
