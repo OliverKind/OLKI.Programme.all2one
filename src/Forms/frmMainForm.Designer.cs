@@ -57,7 +57,6 @@
             this.txtPathSource.Name = "txtPathSource";
             this.txtPathSource.Size = new System.Drawing.Size(354, 20);
             this.txtPathSource.TabIndex = 1;
-            this.txtPathSource.Text = "C:\\Users\\00grigri\\Desktop\\TEST - Kopie";
             // 
             // txtPathTarget
             // 
@@ -65,7 +64,6 @@
             this.txtPathTarget.Name = "txtPathTarget";
             this.txtPathTarget.Size = new System.Drawing.Size(354, 20);
             this.txtPathTarget.TabIndex = 4;
-            this.txtPathTarget.Text = "C:\\Users\\00grigri\\Desktop\\1";
             // 
             // label1
             // 
