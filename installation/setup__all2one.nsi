@@ -1,4 +1,4 @@
-;NSIS Installer for all2one 1.0.1.2
+;NSIS Installer for all2one 1.1.0.3
 ;Using Modern Interface, Setup-Options, etc.
 ;Written by Oliver Kind
 
@@ -21,7 +21,7 @@
 ;Defining
 
   !define AppName          'all2one'
-  !define Version          '1.0.1.2'
+  !define Version          '1.1.0.3'
   !define Company          'OLKI-Software'
   !define Comments         'Ein Programm um schnell Dateien von einem Verzeichniss und Unterverzeichnissen in ein Verzeichniss zu verschieben'
   !define Copyright        '2020 - Oliver Kind'
