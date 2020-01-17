@@ -38,7 +38,7 @@ namespace OLKI.Programme.all2one
         public void Count(BackgroundWorker worker, DoWorkEventArgs e)
         {
             worker.ReportProgress((int) ProcessStep.Count_Start, FORCE_REPORTING_FLAG);
-            this.CountRecusive(new DirectoryInfo(this._source), worker, e);
+            this.CountRecursive(new DirectoryInfo(this._source), worker, e);
             worker.ReportProgress((int) ProcessStep.Count_Finish, FORCE_REPORTING_FLAG);
         }
 
@@ -48,7 +48,7 @@ namespace OLKI.Programme.all2one
         /// <param name="directory">Directroy to move files and go to sub directories</param>
         /// <param name="worker">BackgroundWorker for move</param>
         /// <param name="e">Provides data for the BackgroundWorker</param>
-        private void CountRecusive(DirectoryInfo directory, BackgroundWorker worker, DoWorkEventArgs e)
+        private void CountRecursive(DirectoryInfo directory, BackgroundWorker worker, DoWorkEventArgs e)
         {
             if (worker.CancellationPending) { e.Cancel = true; return; }
 
@@ -62,7 +62,7 @@ namespace OLKI.Programme.all2one
             {
                 if (worker.CancellationPending) { e.Cancel = true; return; }
                 _locker.WaitOne();
-                this.CountRecusive(Directory, worker, e);
+                this.CountRecursive(Directory, worker, e);
             }
         }
     }

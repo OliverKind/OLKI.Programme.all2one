@@ -44,7 +44,7 @@ namespace OLKI.Programme.all2one
         {
             worker.ReportProgress((int)ProcessStep.Move_Start, FORCE_REPORTING_FLAG);
             this.TimeProcessStart = DateTime.Now;
-            this.MoveRecusive(new DirectoryInfo(this._source), worker, e);
+            this.MoveRecursive(new DirectoryInfo(this._source), worker, e);
             worker.ReportProgress((int)ProcessStep.Move_Finish, FORCE_REPORTING_FLAG);
         }
 
@@ -54,7 +54,7 @@ namespace OLKI.Programme.all2one
         /// <param name="directory">Directroy to move files and go to sub directories</param>
         /// <param name="worker">BackgroundWorker for move</param>
         /// <param name="e">Provides data for the BackgroundWorker</param>
-        private void MoveRecusive(DirectoryInfo directory, BackgroundWorker worker, DoWorkEventArgs e)
+        private void MoveRecursive(DirectoryInfo directory, BackgroundWorker worker, DoWorkEventArgs e)
         {
             if (worker.CancellationPending) { e.Cancel = true; return; }
 
@@ -74,7 +74,7 @@ namespace OLKI.Programme.all2one
                 if (worker.CancellationPending) { e.Cancel = true; return; }
                 _locker.WaitOne();
 
-                this.MoveRecusive(Directory, worker, e);
+                this.MoveRecursive(Directory, worker, e);
             }
         }
 
