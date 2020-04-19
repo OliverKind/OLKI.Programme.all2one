@@ -92,7 +92,7 @@ namespace OLKI.Programme.all2one
             {
                 if (TargetFile.Exists)
                 {
-                    HandleExistingFiles.CheckResult HandleFile = HandleExistingFiles.GetOverwriteByAction(sourceFile, TargetFile, Settings.Default.ExistingFile_DateFormat, (HandleExistingFiles.HowToHandleExistingItem)Settings.Default.ExistingFile_Handle, Settings.Default.ExistingFile_AddText, false, out _);
+                    HandleExistingFiles.CheckResult HandleFile = HandleExistingFiles.GetOverwriteByAction(sourceFile, TargetFile, Settings.Default.ExistingFile_DateFormat, (HandleExistingFiles.HowToHandleExistingItem)Settings.Default.ExistingFile_Handle, Settings.Default.ExistingFile_AddText, false, out _, this._mainForm);
 
                     if (HandleFile.FormResult == DialogResult.Cancel)
                     {
