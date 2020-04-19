@@ -135,7 +135,7 @@ namespace OLKI.Programme.all2one
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this._mainForm, string.Format(Stringtable._0x00001m, new object[] { sourceFile.FullName, TargetFile.FullName, ex.Message }), Stringtable._0x00001c, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this._mainForm, string.Format(Stringtable._0x0001m, new object[] { sourceFile.FullName, TargetFile.FullName, ex.Message }), Stringtable._0x0001c, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.FileExceptions++;
                 return false;
             }

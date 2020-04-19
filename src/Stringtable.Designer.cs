@@ -63,9 +63,9 @@ namespace OLKI.Programme.all2one.src {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Fehler beim Verschieben einer Datei. ähnelt.
         /// </summary>
-        internal static string _0x00001c {
+        internal static string _0x0001c {
             get {
-                return ResourceManager.GetString("0x00001c", resourceCulture);
+                return ResourceManager.GetString("0x0001c", resourceCulture);
             }
         }
         
@@ -74,18 +74,18 @@ namespace OLKI.Programme.all2one.src {
         ///
         ///{2} ähnelt.
         /// </summary>
-        internal static string _0x00001m {
+        internal static string _0x0001m {
             get {
-                return ResourceManager.GetString("0x00001m", resourceCulture);
+                return ResourceManager.GetString("0x0001m", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Vorgang abgeschlossen. ähnelt.
         /// </summary>
-        internal static string _0x00002c {
+        internal static string _0x0002c {
             get {
-                return ResourceManager.GetString("0x00002c", resourceCulture);
+                return ResourceManager.GetString("0x0002c", resourceCulture);
             }
         }
         
@@ -104,9 +104,9 @@ namespace OLKI.Programme.all2one.src {
         ///Fehler beim Verschieben:
         ///    {3} ähnelt.
         /// </summary>
-        internal static string _0x00002m {
+        internal static string _0x0002m {
             get {
-                return ResourceManager.GetString("0x00002m", resourceCulture);
+                return ResourceManager.GetString("0x0002m", resourceCulture);
             }
         }
     }
