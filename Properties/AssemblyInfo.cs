@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("all2one - File mover")]
-[assembly: AssemblyDescription("Ein Programm um schnell Dateien von einem Verzeichniss und Unterverzeichnissen in ein Verzeichniss zu verschieben")]
+[assembly: AssemblyDescription("Ein Programm um schnell Dateien von einem Verzeichnis und Unterverzeichnissen in ein Verzeichnis zu verschieben")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OLKI-Software")]
 [assembly: AssemblyProduct("all2one")]
