@@ -174,7 +174,7 @@ namespace OLKI.Programme.all2one
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             this._fileMover = new FileMover(this.txtPathSource.Text, this.txtPathTarget.Text, this._locker, this);
-            //TODO: this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
+            this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
             this._fileMover.Count(this._bgwWorker, e);
             this._fileMover.Move(this._bgwWorker, e);
         }
