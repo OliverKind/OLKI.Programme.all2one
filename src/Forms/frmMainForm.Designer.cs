@@ -1,4 +1,4 @@
-﻿namespace OLKI.Programme.all2one
+﻿namespace OLKI.Programme.all2one.src.Forms
 {
     partial class MainForm
     {
@@ -42,12 +42,12 @@
             this.btnProcessStart = new System.Windows.Forms.Button();
             this.btnBrowseDirectorySource = new System.Windows.Forms.Button();
             this.btnBrowseDirectoryTarget = new System.Windows.Forms.Button();
-            this.pbaProgress = new System.Windows.Forms.ProgressBar();
-            this.txtProgressValue = new System.Windows.Forms.TextBox();
-            this.txtProgressPercent = new System.Windows.Forms.TextBox();
             this.txtRemainTime = new System.Windows.Forms.TextBox();
             this.lblElapsedTime = new System.Windows.Forms.Label();
             this.btnProcessPause = new System.Windows.Forms.Button();
+            this.txtProgressPercent = new System.Windows.Forms.TextBox();
+            this.txtProgressValue = new System.Windows.Forms.TextBox();
+            this.pbaProgress = new System.Windows.Forms.ProgressBar();
             this.grbHandleExistingFiles.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,29 +191,6 @@
             this.btnBrowseDirectoryTarget.UseVisualStyleBackColor = true;
             this.btnBrowseDirectoryTarget.Click += new System.EventHandler(this.btnBrowseDirectoryTarget_Click);
             // 
-            // pbaProgress
-            // 
-            this.pbaProgress.Location = new System.Drawing.Point(12, 244);
-            this.pbaProgress.Name = "pbaProgress";
-            this.pbaProgress.Size = new System.Drawing.Size(350, 23);
-            this.pbaProgress.TabIndex = 11;
-            // 
-            // txtProgressValue
-            // 
-            this.txtProgressValue.Location = new System.Drawing.Point(409, 247);
-            this.txtProgressValue.Name = "txtProgressValue";
-            this.txtProgressValue.ReadOnly = true;
-            this.txtProgressValue.Size = new System.Drawing.Size(163, 20);
-            this.txtProgressValue.TabIndex = 13;
-            // 
-            // txtProgressPercent
-            // 
-            this.txtProgressPercent.Location = new System.Drawing.Point(368, 247);
-            this.txtProgressPercent.Name = "txtProgressPercent";
-            this.txtProgressPercent.ReadOnly = true;
-            this.txtProgressPercent.Size = new System.Drawing.Size(35, 20);
-            this.txtProgressPercent.TabIndex = 12;
-            // 
             // txtRemainTime
             // 
             this.txtRemainTime.Location = new System.Drawing.Point(368, 144);
@@ -243,6 +220,29 @@
             this.btnProcessPause.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcessPause.UseVisualStyleBackColor = true;
             this.btnProcessPause.Click += new System.EventHandler(this.btnProcessPause_Click);
+            // 
+            // txtProgressPercent
+            // 
+            this.txtProgressPercent.Location = new System.Drawing.Point(368, 247);
+            this.txtProgressPercent.Name = "txtProgressPercent";
+            this.txtProgressPercent.ReadOnly = true;
+            this.txtProgressPercent.Size = new System.Drawing.Size(35, 20);
+            this.txtProgressPercent.TabIndex = 12;
+            // 
+            // txtProgressValue
+            // 
+            this.txtProgressValue.Location = new System.Drawing.Point(409, 247);
+            this.txtProgressValue.Name = "txtProgressValue";
+            this.txtProgressValue.ReadOnly = true;
+            this.txtProgressValue.Size = new System.Drawing.Size(163, 20);
+            this.txtProgressValue.TabIndex = 13;
+            // 
+            // pbaProgress
+            // 
+            this.pbaProgress.Location = new System.Drawing.Point(12, 244);
+            this.pbaProgress.Name = "pbaProgress";
+            this.pbaProgress.Size = new System.Drawing.Size(350, 23);
+            this.pbaProgress.TabIndex = 11;
             // 
             // MainForm
             // 
@@ -297,9 +297,9 @@
         private System.Windows.Forms.TextBox txtRemainTime;
         private System.Windows.Forms.Label lblElapsedTime;
         internal System.Windows.Forms.Button btnProcessPause;
-        internal System.Windows.Forms.ProgressBar pbaProgress;
-        internal System.Windows.Forms.TextBox txtProgressValue;
         internal System.Windows.Forms.TextBox txtProgressPercent;
+        internal System.Windows.Forms.TextBox txtProgressValue;
+        internal System.Windows.Forms.ProgressBar pbaProgress;
     }
 }
 

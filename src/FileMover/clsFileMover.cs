@@ -23,10 +23,11 @@
  * 
  * */
 
+using OLKI.Programme.all2one.src.Forms;
 using System;
 using System.Threading;
 
-namespace OLKI.Programme.all2one
+namespace OLKI.Programme.all2one.src.FileMover
 {
     public partial class FileMover
     {

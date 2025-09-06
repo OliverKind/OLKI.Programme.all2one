@@ -23,7 +23,6 @@
  * */
  
 using OLKI.Programme.all2one.Properties;
-using OLKI.Programme.all2one.src;
 using OLKI.Toolbox.DirectoryAndFile;
 using System;
 using System.ComponentModel;
@@ -31,7 +30,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.all2one
+namespace OLKI.Programme.all2one.src.FileMover
 {
     public partial class FileMover
     {

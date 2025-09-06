@@ -23,7 +23,6 @@
  * */
 
 using OLKI.Programme.all2one.Properties;
-using OLKI.Programme.all2one.src;
 using OLKI.Toolbox.Common;
 using OLKI.Toolbox.DirectoryAndFile;
 using OLKI.Toolbox.Widgets.Invoke;
@@ -32,7 +31,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace OLKI.Programme.all2one
+namespace OLKI.Programme.all2one.src.Forms
 {
     public partial class MainForm : Form
     {
@@ -67,7 +66,7 @@ namespace OLKI.Programme.all2one
         /// <summary>
         /// Main object for file counting and moving
         /// </summary>
-        private FileMover _fileMover;
+        private FileMover.FileMover _fileMover;
         #endregion
 
         #region Methodes
@@ -199,7 +198,7 @@ namespace OLKI.Programme.all2one
         #region BackgroundWorker events
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            this._fileMover = new FileMover(this.txtPathSource.Text, this.txtPathTarget.Text, this._locker, this);
+            this._fileMover = new FileMover.FileMover(this.txtPathSource.Text, this.txtPathTarget.Text, this._locker, this);
             this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
             this._fileMover.Count(this._bgwWorker, e);
             this._fileMover.Move(this._bgwWorker, e);
@@ -220,30 +219,30 @@ namespace OLKI.Programme.all2one
             {
                 this._fileMover.TimeLastReport = DateTime.Now;
 
-                FileMover.ProcessStep ProcessStep = (FileMover.ProcessStep)e.ProgressPercentage;
+                FileMover.FileMover.ProcessStep ProcessStep = (FileMover.FileMover.ProcessStep)e.ProgressPercentage;
                 switch (ProcessStep)
                 {
-                    case FileMover.ProcessStep.Count_Start:
+                    case FileMover.FileMover.ProcessStep.Count_Start:
                         ProgressBarInv.Style(this.pbaProgress, ProgressBarStyle.Marquee);
                         TextBoxInv.Text(this.txtProgressPercent, "");
                         TextBoxInv.Text(this.txtProgressValue, "");
                         TextBoxInv.Text(this.txtRemainTime, "");
                         break;
-                    case FileMover.ProcessStep.Count_Busy:
+                    case FileMover.FileMover.ProcessStep.Count_Busy:
                         TextBoxInv.Text(this.txtProgressValue, this._fileMover.FileTotalCount.ToString(FORMAT_VALUE_NUMBER));
                         break;
-                    case FileMover.ProcessStep.Count_Finish:
+                    case FileMover.FileMover.ProcessStep.Count_Finish:
                         ProgressBarInv.Style(this.pbaProgress, ProgressBarStyle.Blocks);
                         ProgressBarInv.Value(this.pbaProgress, 0);
                         break;
-                    case FileMover.ProcessStep.Move_Start:
+                    case FileMover.FileMover.ProcessStep.Move_Start:
                         ProgressBarInv.Style(this.pbaProgress, ProgressBarStyle.Blocks);
                         ProgressBarInv.Value(this.pbaProgress, 0);
                         TextBoxInv.Text(this.txtProgressPercent, "");
                         TextBoxInv.Text(this.txtProgressValue, string.Format(FORMAT_VALUE_MOVE, new object[] { 0.ToString(FORMAT_VALUE_NUMBER), this._fileMover.FileTotalCount.ToString(FORMAT_VALUE_NUMBER) }));
                         TextBoxInv.Text(this.txtRemainTime, "");
                         break;
-                    case FileMover.ProcessStep.Move_Busy:
+                    case FileMover.FileMover.ProcessStep.Move_Busy:
                         Percentage = Convert.ToInt32(Matehmatics.Percentages(this._fileMover.TotalFilesHandled, this._fileMover.FileTotalCount));
                         ProgressBarInv.Value(this.pbaProgress, Percentage);
                         TextBoxInv.Text(this.txtProgressPercent, string.Format(FORMAT_PERCENTAGE, Percentage));
@@ -259,14 +258,14 @@ namespace OLKI.Programme.all2one
                             TextBoxInv.Text(this.txtRemainTime, RemainingTime.ToString(Settings.Default.Move_RemainTimeNoDays));
                         }
                         break;
-                    case FileMover.ProcessStep.Move_Finish:
+                    case FileMover.FileMover.ProcessStep.Move_Finish:
                         Percentage = Convert.ToInt32(Matehmatics.Percentages(this._fileMover.FileMove, this._fileMover.FileTotalCount));
                         ProgressBarInv.Value(this.pbaProgress, Percentage);
                         TextBoxInv.Text(this.txtProgressPercent, string.Format(FORMAT_PERCENTAGE, Percentage));
                         TextBoxInv.Text(this.txtProgressValue, string.Format(FORMAT_VALUE_MOVE, new object[] { this._fileMover.FileMove.ToString(FORMAT_VALUE_NUMBER), this._fileMover.FileTotalCount.ToString(FORMAT_VALUE_NUMBER) }));
                         break;
-                    case FileMover.ProcessStep.Cancel:
-                    case FileMover.ProcessStep.Exception:
+                    case FileMover.FileMover.ProcessStep.Cancel:
+                    case FileMover.FileMover.ProcessStep.Exception:
                         ProgressBarInv.Style(this.pbaProgress, ProgressBarStyle.Blocks);
                         TextBoxInv.Text(this.txtRemainTime, "");
                         break;

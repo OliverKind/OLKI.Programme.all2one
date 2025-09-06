@@ -26,7 +26,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 
-namespace OLKI.Programme.all2one
+namespace OLKI.Programme.all2one.src.FileMover
 {
     public partial class FileMover
     {
