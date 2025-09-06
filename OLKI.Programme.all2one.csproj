@@ -59,12 +59,6 @@
     <Compile Include="src\FileMover\clsFileMover.Move.cs" />
     <Compile Include="src\FileMover\clsFileMover.cs" />
     <Compile Include="src\FileMover\clsFileMover.Count.cs" />
-    <Compile Include="src\Forms\___TEMP FORM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\Forms\___TEMP FORM.Designer.cs">
-      <DependentUpon>___TEMP FORM.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Forms\frmMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
     <EmbeddedResource Include="Properties\Stringtable.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Stringtable.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\___TEMP FORM.resx">
-      <DependentUpon>___TEMP FORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
