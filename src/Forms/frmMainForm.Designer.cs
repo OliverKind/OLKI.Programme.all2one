@@ -53,6 +53,7 @@
             // 
             // txtPathSource
             // 
+            this.txtPathSource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtPathSource.Location = new System.Drawing.Point(82, 12);
             this.txtPathSource.Name = "txtPathSource";
             this.txtPathSource.Size = new System.Drawing.Size(354, 20);
@@ -60,6 +61,7 @@
             // 
             // txtPathTarget
             // 
+            this.txtPathTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtPathTarget.Location = new System.Drawing.Point(82, 38);
             this.txtPathTarget.Name = "txtPathTarget";
             this.txtPathTarget.Size = new System.Drawing.Size(354, 20);
