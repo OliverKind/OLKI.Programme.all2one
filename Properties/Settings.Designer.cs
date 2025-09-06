@@ -100,5 +100,29 @@ namespace OLKI.Programme.all2one.Properties {
                 this["Internal_SettingsUpgradet"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DirectorySource {
+            get {
+                return ((string)(this["DirectorySource"]));
+            }
+            set {
+                this["DirectorySource"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BrowseDirectoryTarget {
+            get {
+                return ((string)(this["BrowseDirectoryTarget"]));
+            }
+            set {
+                this["BrowseDirectoryTarget"] = value;
+            }
+        }
     }
 }

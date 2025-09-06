@@ -119,17 +119,14 @@
   </resheader>
   <data name="0x0001c" xml:space="preserve">
     <value>Fehler beim Verschieben einer Datei.</value>
-    <comment>OLKI.Programme.all2one.FileMover.MoveFile:Exception.Caption</comment>
   </data>
   <data name="0x0001m" xml:space="preserve">
     <value>Die Datei "{0}" kann nicht nach "{1}" verschoben werden.
 
 {2}</value>
-    <comment>OLKI.Programme.all2one.FileMover.MoveFile:Exception.Message</comment>
   </data>
   <data name="0x0002c" xml:space="preserve">
     <value>Vorgang abgeschlossen.</value>
-    <comment>OLKI.Programme.all2one.MainForm.bgwWorker_RunWorkerCompleted:Conclusion.Caption</comment>
   </data>
   <data name="0x0002m" xml:space="preserve">
     <value>Der Vorgang wurde beendet.
@@ -145,6 +142,11 @@ Verschobene Dateien:
     {2}
 Fehler beim Verschieben:
     {3}</value>
-    <comment>OLKI.Programme.all2one.MainForm.bgwWorker_RunWorkerCompleted:Conclusion.Message</comment>
+  </data>
+  <data name="0x0003" xml:space="preserve">
+    <value>Quellordner auswählen.</value>
+  </data>
+  <data name="0x0004" xml:space="preserve">
+    <value>Zielordner auswähelen.</value>
   </data>
 </root>

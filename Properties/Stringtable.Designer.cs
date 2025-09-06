@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OLKI.Programme.all2one.src {
+namespace OLKI.Programme.all2one.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace OLKI.Programme.all2one.src {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.all2one.src.Stringtable", typeof(Stringtable).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLKI.Programme.all2one.Properties.Stringtable", typeof(Stringtable).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -107,6 +107,24 @@ namespace OLKI.Programme.all2one.src {
         internal static string _0x0002m {
             get {
                 return ResourceManager.GetString("0x0002m", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Quellordner auswählen. ähnelt.
+        /// </summary>
+        internal static string _0x0003 {
+            get {
+                return ResourceManager.GetString("0x0003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zielordner auswähelen. ähnelt.
+        /// </summary>
+        internal static string _0x0004 {
+            get {
+                return ResourceManager.GetString("0x0004", resourceCulture);
             }
         }
     }

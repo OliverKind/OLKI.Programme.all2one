@@ -51,13 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\FileMover\clsFileMover.Move.cs" />
-    <Compile Include="src\FileMover\clsFileMover.cs" />
-    <Compile Include="src\FileMover\clsFileMover.Count.cs" />
-    <Compile Include="src\Stringtable.Designer.cs">
+    <Compile Include="Properties\Stringtable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Stringtable.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\FileMover\clsFileMover.Move.cs" />
+    <Compile Include="src\FileMover\clsFileMover.cs" />
+    <Compile Include="src\FileMover\clsFileMover.Count.cs" />
+    <Compile Include="src\Forms\___TEMP FORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Forms\___TEMP FORM.Designer.cs">
+      <DependentUpon>___TEMP FORM.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\frmMainForm.cs">
       <SubType>Form</SubType>
@@ -88,9 +94,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\Stringtable.resx">
+    <EmbeddedResource Include="Properties\Stringtable.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Stringtable.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\___TEMP FORM.resx">
+      <DependentUpon>___TEMP FORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
