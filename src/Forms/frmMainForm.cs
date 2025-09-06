@@ -41,10 +41,12 @@ namespace OLKI.Programme.all2one
         /// Format for progress percentage field
         /// </summary>
         private const string FORMAT_PERCENTAGE = "{0}%";
+
         /// <summary>
         /// Format for progress value field, while moving files
         /// </summary>
         private const string FORMAT_VALUE_MOVE = "{0} / {1}";
+
         /// <summary>
         /// Number format for value field
         /// </summary>
@@ -56,10 +58,12 @@ namespace OLKI.Programme.all2one
         /// Backgroundworker for count and move files
         /// </summary>
         private readonly BackgroundWorker _bgwWorker;
+
         /// <summary>
         /// Locks to lock the BackgroundWorker
         /// </summary>
         private readonly ManualResetEvent _locker = new ManualResetEvent(true);
+
         /// <summary>
         /// Main object for file counting and moving
         /// </summary>
@@ -134,7 +138,6 @@ namespace OLKI.Programme.all2one
             this.SetExistingFileTextBoxes(null);
         }
 
-
         #region Controle Buttons
         private void btnProcessCancel_Click(object sender, EventArgs e)
         {
@@ -171,8 +174,8 @@ namespace OLKI.Programme.all2one
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             this._fileMover = new FileMover(this.txtPathSource.Text, this.txtPathTarget.Text, this._locker, this);
-            _fileMover.Count(this._bgwWorker, e);
-            _fileMover.Move(this._bgwWorker, e);
+            this._fileMover.Count(this._bgwWorker, e);
+            this._fileMover.Move(this._bgwWorker, e);
         }
 
         private void bgwWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -186,9 +189,9 @@ namespace OLKI.Programme.all2one
             if (e.UserState != null && e.UserState.GetType().Equals(typeof(bool))) ForceReport = (bool)e.UserState;
 
             // Report Progress by time Interval or if report is forced
-            if (ForceReport || _fileMover.CheckUpdateInterval())
+            if (ForceReport || this._fileMover.CheckUpdateInterval())
             {
-                _fileMover.TimeLastReport = DateTime.Now;
+                this._fileMover.TimeLastReport = DateTime.Now;
 
                 FileMover.ProcessStep ProcessStep = (FileMover.ProcessStep)e.ProgressPercentage;
                 switch (ProcessStep)
@@ -210,7 +213,7 @@ namespace OLKI.Programme.all2one
                         ProgressBarInv.Style(this.pbaProgress, ProgressBarStyle.Blocks);
                         ProgressBarInv.Value(this.pbaProgress, 0);
                         TextBoxInv.Text(this.txtProgressPercent, "");
-                        TextBoxInv.Text(this.txtProgressValue, string.Format(FORMAT_VALUE_MOVE, new object[] { 0.ToString(FORMAT_VALUE_NUMBER), _fileMover.FileTotalCount.ToString(FORMAT_VALUE_NUMBER) }));
+                        TextBoxInv.Text(this.txtProgressValue, string.Format(FORMAT_VALUE_MOVE, new object[] { 0.ToString(FORMAT_VALUE_NUMBER), this._fileMover.FileTotalCount.ToString(FORMAT_VALUE_NUMBER) }));
                         TextBoxInv.Text(this.txtRemainTime, "");
                         break;
                     case FileMover.ProcessStep.Move_Busy:

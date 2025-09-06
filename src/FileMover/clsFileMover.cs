@@ -35,10 +35,17 @@ namespace OLKI.Programme.all2one
         /// A flag that forces reporting the progress.
         /// </summary>
         public const bool FORCE_REPORTING_FLAG = true;
+
+        /// <summary>
+        /// Time intervall in seconds to update the progress
+        /// </summary>
         private const double PROGRESS_UPDATE_INTERVALL = 0.1;
         #endregion
 
         #region Events
+        /// <summary>
+        /// Event to indicate that the settings for existing files have changed
+        /// </summary>
         public event EventHandler ExistingFileSettingsChanged;
         #endregion
 
