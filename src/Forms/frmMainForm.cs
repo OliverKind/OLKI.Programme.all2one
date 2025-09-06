@@ -113,6 +113,32 @@ namespace OLKI.Programme.all2one
         }
 
         #region Form events
+        private void btnBrowseDirectorySource_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
+            {
+                Description = Stringtable._0x0003,
+                SelectedPath = this.txtPathSource.Text
+            };
+            if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                this.txtPathSource.Text = FolderBrowserDialog.SelectedPath;
+            }
+        }
+
+        private void btnBrowseDirectoryTarget_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
+            {
+                Description = Stringtable._0x0004,
+                SelectedPath = this.txtPathTarget.Text
+            };
+            if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                this.txtPathTarget.Text = FolderBrowserDialog.SelectedPath;
+            }
+        }
+
         private void MainForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             AboutForm AboutForm = new AboutForm();

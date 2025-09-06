@@ -176,6 +176,7 @@
             this.btnBrowseDirectorySource.Text = "Durchsuchen";
             this.btnBrowseDirectorySource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowseDirectorySource.UseVisualStyleBackColor = true;
+            this.btnBrowseDirectorySource.Click += new System.EventHandler(this.btnBrowseDirectorySource_Click);
             // 
             // btnBrowseDirectoryTarget
             // 
@@ -188,6 +189,7 @@
             this.btnBrowseDirectoryTarget.Text = "Durchsuchen";
             this.btnBrowseDirectoryTarget.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowseDirectoryTarget.UseVisualStyleBackColor = true;
+            this.btnBrowseDirectoryTarget.Click += new System.EventHandler(this.btnBrowseDirectoryTarget_Click);
             // 
             // pbaProgress
             // 
