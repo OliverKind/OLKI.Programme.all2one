@@ -24,9 +24,9 @@
 
 using OLKI.Programme.all2one.Properties;
 using OLKI.Programme.all2one.src;
-using OLKI.Tools.CommonTools;
-using OLKI.Tools.CommonTools.DirectoryAndFile;
-using OLKI.Widgets.Invoke;
+using OLKI.Toolbox.Common;
+using OLKI.Toolbox.DirectoryAndFile;
+using OLKI.Toolbox.Widgets.Invoke;
 using System;
 using System.ComponentModel;
 using System.Threading;

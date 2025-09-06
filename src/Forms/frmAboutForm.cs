@@ -151,7 +151,7 @@ namespace OLKI.Programme.all2one
         #region Form events
         private void btnGoToLicenses_Click(object sender, EventArgs e)
         {
-            OLKI.Tools.CommonTools.DirectoryAndFile.Directory.Open(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\Licenses\", false);
+            Toolbox.DirectoryAndFile.Directory.Open(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\Licenses\", false);
         }
         #endregion
     }
