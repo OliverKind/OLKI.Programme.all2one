@@ -23,6 +23,7 @@
  * */
 
 using OLKI.Programme.all2one.Properties;
+using OLKI.Programme.all2one.src.Forms;
 using System;
 using System.Windows.Forms;
 
