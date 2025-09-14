@@ -72,6 +72,22 @@ namespace OLKI.Programme.all2one.src.FileMover
         {
             worker.ReportProgress((int)ProcessStep.Move_Start, FORCE_REPORTING_FLAG);
             this.TimeProcessStart = DateTime.Now;
+
+            try
+            {
+                if (Settings.Default.CreateIndex)
+                {
+                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
+                    {
+                        outputFile.Write("");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = ex;
+            }
+
             this.MoveRecursive(new DirectoryInfo(Settings.Default.DirectorySource), worker, e);
             worker.ReportProgress((int)ProcessStep.Move_Finish, FORCE_REPORTING_FLAG);
         }
@@ -86,11 +102,41 @@ namespace OLKI.Programme.all2one.src.FileMover
         {
             if (worker.CancellationPending) { e.Cancel = true; return; }
 
+            try
+            {
+                if (Settings.Default.CreateIndex)
+                {
+                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
+                    {
+                        outputFile.WriteLine(this.GetRelativeDirectory(directory));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = ex;
+            }
+
             //Move files
             foreach (FileInfo File in directory.GetFiles().OrderBy(f => f.FullName))
             {
                 if (worker.CancellationPending) { e.Cancel = true; return; }
                 _locker.WaitOne();
+
+                try
+                {
+                    if (Settings.Default.CreateIndex)
+                    {
+                        using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
+                        {
+                            outputFile.WriteLine("\t" + File.Name);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _ = ex;
+                }
 
                 this.MoveFile(File, worker, e);
                 worker.ReportProgress((int)ProcessStep.Move_Busy);
@@ -169,5 +215,5 @@ namespace OLKI.Programme.all2one.src.FileMover
                 return false;
             }
         }
-     }
+    }
 }
