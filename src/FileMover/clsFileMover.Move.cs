@@ -73,21 +73,7 @@ namespace OLKI.Programme.all2one.src.FileMover
             worker.ReportProgress((int)ProcessStep.Move_Start, FORCE_REPORTING_FLAG);
             this.TimeProcessStart = DateTime.Now;
 
-            try
-            {
-                if (Settings.Default.CreateIndex)
-                {
-                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
-                    {
-                        outputFile.Write("");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                _ = ex;
-            }
-
+            if (Settings.Default.CreateIndex) this.WriteIndex("", false);
             this.MoveRecursive(new DirectoryInfo(Settings.Default.DirectorySource), worker, e);
             worker.ReportProgress((int)ProcessStep.Move_Finish, FORCE_REPORTING_FLAG);
         }
@@ -102,20 +88,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         {
             if (worker.CancellationPending) { e.Cancel = true; return; }
 
-            try
-            {
-                if (Settings.Default.CreateIndex)
-                {
-                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
-                    {
-                        outputFile.WriteLine(this.GetRelativeDirectory(directory));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                _ = ex;
-            }
+            if (Settings.Default.CreateIndex) this.WriteIndex(this.GetRelativeDirectory(directory), true);
 
             //Move files
             foreach (FileInfo File in directory.GetFiles().OrderBy(f => f.FullName))
@@ -123,20 +96,7 @@ namespace OLKI.Programme.all2one.src.FileMover
                 if (worker.CancellationPending) { e.Cancel = true; return; }
                 _locker.WaitOne();
 
-                try
-                {
-                    if (Settings.Default.CreateIndex)
-                    {
-                        using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
-                        {
-                            outputFile.WriteLine("\t" + File.Name);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _ = ex;
-                }
+                if (Settings.Default.CreateIndex) this.WriteIndex("\t" + File.Name, true);
 
                 this.MoveFile(File, worker, e);
                 worker.ReportProgress((int)ProcessStep.Move_Busy);
@@ -214,6 +174,31 @@ namespace OLKI.Programme.all2one.src.FileMover
                 this.FileExceptions++;
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Write to Logfile
+        /// </summary>
+        /// <param name="text">Text to write</param>
+        /// <param name="writeLine">Ture if write to new line, otherwise false</param>
+        private void WriteIndex(string text, bool writeLine)
+        {
+            try
+            {
+                if (Settings.Default.CreateIndex)
+                {
+                    using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(Settings.Default.DirectoryTarget, Settings.Default.CreateIndexTarget), true))
+                    {
+                        if (!writeLine) outputFile.Write(text);
+                        if (writeLine) outputFile.WriteLine(text);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = ex;
+            }
+
         }
     }
 }
