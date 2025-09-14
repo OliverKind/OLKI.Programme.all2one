@@ -210,7 +210,7 @@ namespace OLKI.Programme.all2one.src.FileMover
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this._mainForm, string.Format(Stringtable._0x0001m, new object[] { sourceFile.FullName, TargetFile.FullName, ex.Message }), Stringtable._0x0001c, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this._mainForm.Invoke((Func<DialogResult>)(() => MessageBox.Show(this._mainForm, string.Format(Stringtable._0x0001m, new object[] { sourceFile.FullName, TargetFile.FullName, ex.Message }), Stringtable._0x0001c, MessageBoxButtons.OK, MessageBoxIcon.Error)));
                 this.FileExceptions++;
                 return false;
             }
