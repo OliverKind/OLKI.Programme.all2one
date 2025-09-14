@@ -41,6 +41,11 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// Time intervall in seconds to update the progress
         /// </summary>
         private const double PROGRESS_UPDATE_INTERVALL = 0.1;
+
+        /// <summary>
+        /// Represents the character used to replace backslashes if keeping directory structure.
+        /// </summary>
+        private const char REPLACE_FOR_BACKSLASH = '@';
         #endregion
 
         #region Events

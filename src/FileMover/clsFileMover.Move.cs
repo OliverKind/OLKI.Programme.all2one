@@ -35,16 +35,32 @@ namespace OLKI.Programme.all2one.src.FileMover
     public partial class FileMover
     {
         /// <summary>
-        /// Generates the target file path for a given source file.
+        /// Generates the target file name for a given source file based on the settings.
         /// </summary>
-        /// <remarks>The target file path is constructed by appending the name of the source file to the
-        /// directory specified in the application settings (<see cref="Settings.Default.DirectoryTarget"/>).</remarks>
-        /// <param name="sourceFile">The source file for which the target file path is generated. Cannot be null.</param>
-        /// <returns>The full path of the target file, combining the target directory from settings and the name of the source
-        /// file.</returns>
-        private string GetTargetFileName(FileInfo sourceFile)
+        /// <param name="sourceFile">The source file for which the target file name is being generated.</param>
+        /// <param name="actualRelativePath">The actual relative path of the file.</param>
+        /// <returns>The full path of the target file name.</returns>
+        private string GetTargetFileName(FileInfo sourceFile, out string actualRelativePath)
         {
-            return Settings.Default.DirectoryTarget + @"\" + sourceFile.Name;
+            actualRelativePath = GetRelativeDirectory(sourceFile.Directory);
+            if (Settings.Default.CopyMoveKeepStructure)
+            {
+                return System.IO.Path.Combine(Settings.Default.DirectoryTarget, actualRelativePath.Replace('\\', REPLACE_FOR_BACKSLASH) + sourceFile.Name);
+            }
+            else
+            {
+                return Settings.Default.DirectoryTarget + @"\" + sourceFile.Name;
+            }
+        }
+
+        /// <summary>
+        /// Get the relative directory path of the specified source directory based on the configured source directory path.
+        /// </summary>
+        /// <returns>A string representing the relative directory path. Returns . if the source directory matches the source directory, relative path prefixed with.</returns>
+        private string GetRelativeDirectory(DirectoryInfo SoruceDirecotry)
+        {
+            string actualRelativePath = SoruceDirecotry.FullName.Substring(Settings.Default.DirectorySource.Length, SoruceDirecotry.FullName.Length - Settings.Default.DirectorySource.Length);
+            return (actualRelativePath.Length <= 0 ? "." : @".\" + actualRelativePath.Substring(1, actualRelativePath.Length - 1)) + @"\";
         }
 
         /// <summary>
@@ -99,7 +115,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// <returns>True if files was moves sucessfull</returns>
         private bool MoveFile(FileInfo sourceFile, BackgroundWorker worker, DoWorkEventArgs e)
         {
-            FileInfo TargetFile = new FileInfo(GetTargetFileName(sourceFile));
+            FileInfo TargetFile = new FileInfo(GetTargetFileName(sourceFile, out string ActualRelativePath));
             try
             {
                 if (TargetFile.Exists)
@@ -153,5 +169,5 @@ namespace OLKI.Programme.all2one.src.FileMover
                 return false;
             }
         }
-    }
+     }
 }
