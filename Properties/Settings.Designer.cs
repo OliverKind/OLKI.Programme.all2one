@@ -182,12 +182,26 @@ namespace OLKI.Programme.all2one.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
         public bool CopyMoveKeepStructure {
             get {
                 return ((bool)(this["CopyMoveKeepStructure"]));
             }
             set {
                 this["CopyMoveKeepStructure"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool AppUpdate_CheckAtStartUp {
+            get {
+                return ((bool)(this["AppUpdate_CheckAtStartUp"]));
+            }
+            set {
+                this["AppUpdate_CheckAtStartUp"] = value;
             }
         }
     }

@@ -25,9 +25,12 @@
 using OLKI.Programme.all2one.Properties;
 using OLKI.Toolbox.Common;
 using OLKI.Toolbox.DirectoryAndFile;
+using OLKI.Toolbox.Widgets.AboutForm;
 using OLKI.Toolbox.Widgets.Invoke;
 using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -142,9 +145,21 @@ namespace OLKI.Programme.all2one.src.Forms
 
         private void MainForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            AboutForm AboutForm = new AboutForm();
-            AboutForm.ShowDialog(this);
-            AboutForm.Dispose();
+            System.Reflection.Assembly Assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            Image AppImage = Resources.program_symbol_256;
+            Image ProImage = null;
+            OLKI.Toolbox.Widgets.AboutForm.AboutForm AboutForm = new OLKI.Toolbox.Widgets.AboutForm.AboutForm(Assembly, AppImage, ProImage)
+            {
+                Credits = Resources.Credits,
+                LicenseDirectory = System.IO.Path.GetDirectoryName(Assembly.Location) + @"\Licenses\",
+                ShowUpdateControles = true,
+                UpdateOnStartup = Settings.Default.AppUpdate_CheckAtStartUp
+            };
+            AboutForm.Show(this);
+
+            //AboutForm AboutForm = new AboutForm();
+            //AboutForm.ShowDialog(this);
+            //AboutForm.Dispose();
             e.Cancel = true;
         }
 

@@ -59,5 +59,37 @@ namespace OLKI.Programme.all2one.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die // Entwickler:
+        ///Programmierung: Oliver Kind
+        ///Design: Oliver Kind
+        ///
+        ///
+        ///
+        /////Bilder und Symbole
+        ///- Oliver Kind
+        ///
+        ///- VS2010ImageLibrary, Microsoft Visual Studio 2010, Version 10.0.40219.1 SP1Rel
+        ///  Microsoft Corporation
+        ///  One Microsoft Way
+        ///  Redmond, WA 98052-6399
+        ///  USA ähnelt.
+        /// </summary>
+        internal static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap program_symbol_256 {
+            get {
+                object obj = ResourceManager.GetObject("program_symbol_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

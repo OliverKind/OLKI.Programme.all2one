@@ -65,19 +65,13 @@
     <Compile Include="src\Forms\frmMainForm.Designer.cs">
       <DependentUpon>frmMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Forms\frmAboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\Forms\frmAboutForm.designer.cs">
-      <DependentUpon>frmAboutForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Program_Symbol.ico" />
     <Content Include="Properties\Resources\ProgamIcons\program_symbol\Program_Symbol.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Properties\Resources\ProgamIcons\program_symbol\ProgSym_256.png" />
+    <Content Include="Properties\Resources\ProgamIcons\program_symbol\program_symbol_256.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,14 +89,8 @@
     <EmbeddedResource Include="src\Forms\frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\frmAboutForm.resx">
-      <DependentUpon>frmAboutForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="CONTRIBUTING.md" />
-    <Content Include="doc\Eula.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="doc\Information.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
