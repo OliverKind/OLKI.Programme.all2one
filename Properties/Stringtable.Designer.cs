@@ -127,5 +127,23 @@ namespace OLKI.Programme.all2one.Properties {
                 return ResourceManager.GetString("0x0004", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bitte Aufgabe auswählen ähnelt.
+        /// </summary>
+        internal static string _0x0005c {
+            get {
+                return ResourceManager.GetString("0x0005c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Es wurde keine Aufgabe ausgewählt. Bitte wählen Sie aus, ob Dateien kopiert und/oder ein Index erstellt werden soll. ähnelt.
+        /// </summary>
+        internal static string _0x0005m {
+            get {
+                return ResourceManager.GetString("0x0005m", resourceCulture);
+            }
+        }
     }
 }

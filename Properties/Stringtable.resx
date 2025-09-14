@@ -149,4 +149,10 @@ Fehler beim Verschieben:
   <data name="0x0004" xml:space="preserve">
     <value>Zielordner auswähelen.</value>
   </data>
+  <data name="0x0005c" xml:space="preserve">
+    <value>Bitte Aufgabe auswählen</value>
+  </data>
+  <data name="0x0005m" xml:space="preserve">
+    <value>Es wurde keine Aufgabe ausgewählt. Bitte wählen Sie aus, ob Dateien kopiert und/oder ein Index erstellt werden soll.</value>
+  </data>
 </root>

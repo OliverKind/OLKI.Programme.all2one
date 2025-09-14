@@ -214,6 +214,12 @@ namespace OLKI.Programme.all2one.src.Forms
 
         private void btnProcessStart_Click(object sender, EventArgs e)
         {
+            if (!this.chkCopyFiles.Checked && !this.chkCreateIndex.Checked)
+            {
+                MessageBox.Show(this, Stringtable._0x0005m, Stringtable._0x0005c, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             this.btnProcessStart.Enabled = false;
             this.btnProcessPause.Enabled = true;
             this.btnProcessCancel.Enabled = true;
