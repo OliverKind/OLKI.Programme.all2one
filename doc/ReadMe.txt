@@ -1,7 +1,7 @@
-'all2one - 1.0.0.1' - File mover
-********************************
+all2one - File mover
+********************
 
-Copyright © 2020 OLKI - Oliver Kind
+Copyright © 2025 OLKI - Oliver Kind
 Alle Rechte vorbehalten.
 
 
