@@ -43,7 +43,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         {
             worker.ReportProgress((int)ProcessStep.Move_Start, FORCE_REPORTING_FLAG);
             this.TimeProcessStart = DateTime.Now;
-            this.MoveRecursive(new DirectoryInfo(this._source), worker, e);
+            this.MoveRecursive(new DirectoryInfo(Settings.Default.DirectorySource), worker, e);
             worker.ReportProgress((int)ProcessStep.Move_Finish, FORCE_REPORTING_FLAG);
         }
 
@@ -86,7 +86,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// <returns>True if files was moves sucessfull</returns>
         private bool MoveFile(FileInfo sourceFile, BackgroundWorker worker, DoWorkEventArgs e)
         {
-            FileInfo TargetFile = new FileInfo(this._target + @"\" + sourceFile.Name);
+            FileInfo TargetFile = new FileInfo(Settings.Default.DirectoryTarget + @"\" + sourceFile.Name);
             try
             {
                 if (TargetFile.Exists)

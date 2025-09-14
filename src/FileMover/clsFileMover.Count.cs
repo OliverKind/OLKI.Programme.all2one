@@ -22,6 +22,7 @@
  * 
  * */
 
+using OLKI.Programme.all2one.Properties;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         public void Count(BackgroundWorker worker, DoWorkEventArgs e)
         {
             worker.ReportProgress((int)ProcessStep.Count_Start, FORCE_REPORTING_FLAG);
-            this.CountRecursive(new DirectoryInfo(this._source), worker, e);
+            this.CountRecursive(new DirectoryInfo(Settings.Default.DirectorySource), worker, e);
             worker.ReportProgress((int)ProcessStep.Count_Finish, FORCE_REPORTING_FLAG);
         }
 

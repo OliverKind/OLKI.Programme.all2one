@@ -200,7 +200,7 @@ namespace OLKI.Programme.all2one.src.Forms
             if (this._systemChanged) return;
             this.rabCopyFiles.Checked = !this.rabMoveFiles.Checked;
 
-            Settings.Default.CopyMoveAction = this.rabMoveFiles.Checked ? 1 :0;
+            Settings.Default.CopyMoveAction = this.rabMoveFiles.Checked ? 1 : 0;
             Settings.Default.Save();
         }
 
@@ -266,7 +266,7 @@ namespace OLKI.Programme.all2one.src.Forms
         #region BackgroundWorker events
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            this._fileMover = new FileMover.FileMover(this.chkCopyMoveFiles.Checked, this.chkCreateIndex.Checked, this.txtCreateIndex.Text, this.txtDirectorySource.Text, this.txtDirectoryTarget.Text, this._locker, this);
+            this._fileMover = new FileMover.FileMover(this._locker, this);
             this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
             this._fileMover.Count(this._bgwWorker, e);
             this._fileMover.Move(this._bgwWorker, e);

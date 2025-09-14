@@ -70,34 +70,9 @@ namespace OLKI.Programme.all2one.src.FileMover
 
         #region Fields
         /// <summary>
-        /// Indicates whether files should be copied during the operation.
-        /// </summary>
-        public readonly bool _copyFiles = false;
-
-        /// <summary>
-        /// Indicates whether an index should be created.
-        /// </summary>
-        public readonly bool _createIndex = false;
-
-        /// <summary>
-        /// Represents the target index to be created.
-        /// </summary>
-        public readonly string _createIndexTarget;
-
-        /// <summary>
         /// Locks to lock the BackgroundWorker
         /// </summary>
         private readonly ManualResetEvent _locker = new ManualResetEvent(true);
-
-        /// <summary>
-        /// Soruce directroy to get files
-        /// </summary>
-        private readonly string _source;
-
-        /// <summary>
-        /// Target directroy to move files to
-        /// </summary>
-        private readonly string _target;
 
         /// <summary>
         /// Application MainForm to have it as owner for MessageBoxes
@@ -146,22 +121,11 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// <summary>
         /// Initial a new file mover object
         /// </summary>
-        /// <param name="copyFiles">Indicates whether files should be copied during the operation</param>
-        /// <param name="createIndex">Indicates whether an index should be created</param>
-        /// <param name="createIndexTarget">Represents the target index to be created</param>
-        /// <param name="source">Soruce directroy to get files</param>
-        /// <param name="target">Target directroy to move files to</param>
         /// <param name="locker">Locks ofject to lcok the BackgroundWorker</param>
         /// <param name="mainForm">Application MainForm to have it as owner for MessageBoxes</param>
-        public FileMover(bool copyFiles, bool createIndex, string createIndexTarget, string source, string target, ManualResetEvent locker, MainForm mainForm)
+        public FileMover(ManualResetEvent locker, MainForm mainForm)
         {
-            this._copyFiles = copyFiles;
-            this._createIndex = createIndex;
-            this._createIndexTarget = createIndexTarget;
-
             this._locker = locker;
-            this._source = source;
-            this._target = target;
 
             this._mainForm = mainForm;
         }
