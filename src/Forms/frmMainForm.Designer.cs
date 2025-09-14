@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.txtPathSource = new System.Windows.Forms.TextBox();
-            this.txtPathTarget = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtDirectorySource = new System.Windows.Forms.TextBox();
+            this.txtDirectoryTarget = new System.Windows.Forms.TextBox();
+            this.lblDirectorySource = new System.Windows.Forms.Label();
+            this.lblDirectoryTarget = new System.Windows.Forms.Label();
             this.grbHandleExistingFiles = new System.Windows.Forms.GroupBox();
             this.lblAddTextToExistingFileText = new System.Windows.Forms.Label();
             this.txtAddTextToExistingFileText = new System.Windows.Forms.TextBox();
@@ -40,50 +40,50 @@
             this.btnHandleExistingFile_SetDefault = new System.Windows.Forms.Button();
             this.btnProcessCancel = new System.Windows.Forms.Button();
             this.btnProcessStart = new System.Windows.Forms.Button();
-            this.btnBrowseDirectorySource = new System.Windows.Forms.Button();
-            this.btnBrowseDirectoryTarget = new System.Windows.Forms.Button();
+            this.btnDirectorySource = new System.Windows.Forms.Button();
+            this.btnDirectoryTarget = new System.Windows.Forms.Button();
             this.txtRemainTime = new System.Windows.Forms.TextBox();
-            this.lblElapsedTime = new System.Windows.Forms.Label();
+            this.lblRemainTime = new System.Windows.Forms.Label();
             this.btnProcessPause = new System.Windows.Forms.Button();
             this.epbProgress = new OLKI.Toolbox.Widgets.ExtProgressBar();
             this.grbHandleExistingFiles.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtPathSource
+            // txtDirectorySource
             // 
-            this.txtPathSource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtPathSource.Location = new System.Drawing.Point(82, 12);
-            this.txtPathSource.Name = "txtPathSource";
-            this.txtPathSource.Size = new System.Drawing.Size(354, 20);
-            this.txtPathSource.TabIndex = 1;
-            this.txtPathSource.TextChanged += new System.EventHandler(this.txtPathSource_TextChanged);
+            this.txtDirectorySource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtDirectorySource.Location = new System.Drawing.Point(82, 12);
+            this.txtDirectorySource.Name = "txtDirectorySource";
+            this.txtDirectorySource.Size = new System.Drawing.Size(354, 20);
+            this.txtDirectorySource.TabIndex = 1;
+            this.txtDirectorySource.TextChanged += new System.EventHandler(this.txtDirectorySource_TextChanged);
             // 
-            // txtPathTarget
+            // txtDirectoryTarget
             // 
-            this.txtPathTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtPathTarget.Location = new System.Drawing.Point(82, 38);
-            this.txtPathTarget.Name = "txtPathTarget";
-            this.txtPathTarget.Size = new System.Drawing.Size(354, 20);
-            this.txtPathTarget.TabIndex = 4;
-            this.txtPathTarget.TextChanged += new System.EventHandler(this.txtPathTarget_TextChanged);
+            this.txtDirectoryTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtDirectoryTarget.Location = new System.Drawing.Point(82, 38);
+            this.txtDirectoryTarget.Name = "txtDirectoryTarget";
+            this.txtDirectoryTarget.Size = new System.Drawing.Size(354, 20);
+            this.txtDirectoryTarget.TabIndex = 4;
+            this.txtDirectoryTarget.TextChanged += new System.EventHandler(this.txtDirectoryTarget_TextChanged);
             // 
-            // label1
+            // lblDirectorySource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quellordner:";
+            this.lblDirectorySource.AutoSize = true;
+            this.lblDirectorySource.Location = new System.Drawing.Point(12, 15);
+            this.lblDirectorySource.Name = "lblDirectorySource";
+            this.lblDirectorySource.Size = new System.Drawing.Size(64, 13);
+            this.lblDirectorySource.TabIndex = 0;
+            this.lblDirectorySource.Text = "Quellordner:";
             // 
-            // label2
+            // lblDirectoryTarget
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Zielordner:";
+            this.lblDirectoryTarget.AutoSize = true;
+            this.lblDirectoryTarget.Location = new System.Drawing.Point(12, 41);
+            this.lblDirectoryTarget.Name = "lblDirectoryTarget";
+            this.lblDirectoryTarget.Size = new System.Drawing.Size(57, 13);
+            this.lblDirectoryTarget.TabIndex = 3;
+            this.lblDirectoryTarget.Text = "Zielordner:";
             // 
             // grbHandleExistingFiles
             // 
@@ -165,31 +165,31 @@
             this.btnProcessStart.UseVisualStyleBackColor = true;
             this.btnProcessStart.Click += new System.EventHandler(this.btnProcessStart_Click);
             // 
-            // btnBrowseDirectorySource
+            // btnDirectorySource
             // 
-            this.btnBrowseDirectorySource.Image = ((System.Drawing.Image)(resources.GetObject("btnBrowseDirectorySource.Image")));
-            this.btnBrowseDirectorySource.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBrowseDirectorySource.Location = new System.Drawing.Point(442, 10);
-            this.btnBrowseDirectorySource.Name = "btnBrowseDirectorySource";
-            this.btnBrowseDirectorySource.Size = new System.Drawing.Size(130, 23);
-            this.btnBrowseDirectorySource.TabIndex = 2;
-            this.btnBrowseDirectorySource.Text = "Durchsuchen";
-            this.btnBrowseDirectorySource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBrowseDirectorySource.UseVisualStyleBackColor = true;
-            this.btnBrowseDirectorySource.Click += new System.EventHandler(this.btnBrowseDirectorySource_Click);
+            this.btnDirectorySource.Image = ((System.Drawing.Image)(resources.GetObject("btnDirectorySource.Image")));
+            this.btnDirectorySource.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDirectorySource.Location = new System.Drawing.Point(442, 10);
+            this.btnDirectorySource.Name = "btnDirectorySource";
+            this.btnDirectorySource.Size = new System.Drawing.Size(130, 23);
+            this.btnDirectorySource.TabIndex = 2;
+            this.btnDirectorySource.Text = "Durchsuchen";
+            this.btnDirectorySource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDirectorySource.UseVisualStyleBackColor = true;
+            this.btnDirectorySource.Click += new System.EventHandler(this.btnDirectorySource_Click);
             // 
-            // btnBrowseDirectoryTarget
+            // btnDirectoryTarget
             // 
-            this.btnBrowseDirectoryTarget.Image = ((System.Drawing.Image)(resources.GetObject("btnBrowseDirectoryTarget.Image")));
-            this.btnBrowseDirectoryTarget.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBrowseDirectoryTarget.Location = new System.Drawing.Point(442, 36);
-            this.btnBrowseDirectoryTarget.Name = "btnBrowseDirectoryTarget";
-            this.btnBrowseDirectoryTarget.Size = new System.Drawing.Size(130, 23);
-            this.btnBrowseDirectoryTarget.TabIndex = 5;
-            this.btnBrowseDirectoryTarget.Text = "Durchsuchen";
-            this.btnBrowseDirectoryTarget.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBrowseDirectoryTarget.UseVisualStyleBackColor = true;
-            this.btnBrowseDirectoryTarget.Click += new System.EventHandler(this.btnBrowseDirectoryTarget_Click);
+            this.btnDirectoryTarget.Image = ((System.Drawing.Image)(resources.GetObject("btnDirectoryTarget.Image")));
+            this.btnDirectoryTarget.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDirectoryTarget.Location = new System.Drawing.Point(442, 36);
+            this.btnDirectoryTarget.Name = "btnDirectoryTarget";
+            this.btnDirectoryTarget.Size = new System.Drawing.Size(130, 23);
+            this.btnDirectoryTarget.TabIndex = 5;
+            this.btnDirectoryTarget.Text = "Durchsuchen";
+            this.btnDirectoryTarget.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDirectoryTarget.UseVisualStyleBackColor = true;
+            this.btnDirectoryTarget.Click += new System.EventHandler(this.btnDirectoryTarget_Click);
             // 
             // txtRemainTime
             // 
@@ -199,14 +199,14 @@
             this.txtRemainTime.Size = new System.Drawing.Size(204, 20);
             this.txtRemainTime.TabIndex = 8;
             // 
-            // lblElapsedTime
+            // lblRemainTime
             // 
-            this.lblElapsedTime.AutoSize = true;
-            this.lblElapsedTime.Location = new System.Drawing.Point(368, 128);
-            this.lblElapsedTime.Name = "lblElapsedTime";
-            this.lblElapsedTime.Size = new System.Drawing.Size(105, 13);
-            this.lblElapsedTime.TabIndex = 7;
-            this.lblElapsedTime.Text = "Geschätzte Restzeit:";
+            this.lblRemainTime.AutoSize = true;
+            this.lblRemainTime.Location = new System.Drawing.Point(368, 128);
+            this.lblRemainTime.Name = "lblRemainTime";
+            this.lblRemainTime.Size = new System.Drawing.Size(105, 13);
+            this.lblRemainTime.TabIndex = 7;
+            this.lblRemainTime.Text = "Geschätzte Restzeit:";
             // 
             // btnProcessPause
             // 
@@ -241,17 +241,17 @@
             this.ClientSize = new System.Drawing.Size(584, 279);
             this.Controls.Add(this.epbProgress);
             this.Controls.Add(this.btnProcessPause);
-            this.Controls.Add(this.lblElapsedTime);
+            this.Controls.Add(this.lblRemainTime);
             this.Controls.Add(this.txtRemainTime);
-            this.Controls.Add(this.btnBrowseDirectoryTarget);
-            this.Controls.Add(this.btnBrowseDirectorySource);
+            this.Controls.Add(this.btnDirectoryTarget);
+            this.Controls.Add(this.btnDirectorySource);
             this.Controls.Add(this.btnProcessCancel);
             this.Controls.Add(this.btnProcessStart);
             this.Controls.Add(this.grbHandleExistingFiles);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPathTarget);
-            this.Controls.Add(this.txtPathSource);
+            this.Controls.Add(this.lblDirectoryTarget);
+            this.Controls.Add(this.lblDirectorySource);
+            this.Controls.Add(this.txtDirectoryTarget);
+            this.Controls.Add(this.txtDirectorySource);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -269,10 +269,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtPathSource;
-        private System.Windows.Forms.TextBox txtPathTarget;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDirectorySource;
+        private System.Windows.Forms.TextBox txtDirectoryTarget;
+        private System.Windows.Forms.Label lblDirectorySource;
+        private System.Windows.Forms.Label lblDirectoryTarget;
         private System.Windows.Forms.GroupBox grbHandleExistingFiles;
         private System.Windows.Forms.Label lblAddTextToExistingFileText;
         private System.Windows.Forms.TextBox txtAddTextToExistingFileText;
@@ -280,10 +280,10 @@
         private System.Windows.Forms.Button btnHandleExistingFile_SetDefault;
         internal System.Windows.Forms.Button btnProcessCancel;
         internal System.Windows.Forms.Button btnProcessStart;
-        private System.Windows.Forms.Button btnBrowseDirectorySource;
-        private System.Windows.Forms.Button btnBrowseDirectoryTarget;
+        private System.Windows.Forms.Button btnDirectorySource;
+        private System.Windows.Forms.Button btnDirectoryTarget;
         private System.Windows.Forms.TextBox txtRemainTime;
-        private System.Windows.Forms.Label lblElapsedTime;
+        private System.Windows.Forms.Label lblRemainTime;
         internal System.Windows.Forms.Button btnProcessPause;
         private Toolbox.Widgets.ExtProgressBar epbProgress;
     }

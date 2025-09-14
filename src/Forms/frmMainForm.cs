@@ -69,8 +69,8 @@ namespace OLKI.Programme.all2one.src.Forms
             this._bgwWorker.ProgressChanged += new ProgressChangedEventHandler(this.bgwWorker_ProgressChanged);
             this._bgwWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.bgwWorker_RunWorkerCompleted);
 
-            this.txtPathSource.Text = Settings.Default.DirectorySource;
-            this.txtPathTarget.Text = Settings.Default.DirectoryTarget;
+            this.txtDirectorySource.Text = Settings.Default.DirectorySource;
+            this.txtDirectoryTarget.Text = Settings.Default.DirectoryTarget;
 
             this.SetExistingFileTextBoxes(null);
         }
@@ -98,29 +98,29 @@ namespace OLKI.Programme.all2one.src.Forms
         }
 
         #region Form events
-        private void btnBrowseDirectorySource_Click(object sender, EventArgs e)
+        private void btnDirectorySource_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
             {
                 Description = Stringtable._0x0003,
-                SelectedPath = this.txtPathSource.Text
+                SelectedPath = this.txtDirectorySource.Text
             };
             if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
             {
-                this.txtPathSource.Text = FolderBrowserDialog.SelectedPath;
+                this.txtDirectorySource.Text = FolderBrowserDialog.SelectedPath;
             }
         }
 
-        private void btnBrowseDirectoryTarget_Click(object sender, EventArgs e)
+        private void btnDirectoryTarget_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
             {
                 Description = Stringtable._0x0004,
-                SelectedPath = this.txtPathTarget.Text
+                SelectedPath = this.txtDirectoryTarget.Text
             };
             if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
             {
-                this.txtPathTarget.Text = FolderBrowserDialog.SelectedPath;
+                this.txtDirectoryTarget.Text = FolderBrowserDialog.SelectedPath;
             }
         }
 
@@ -144,15 +144,15 @@ namespace OLKI.Programme.all2one.src.Forms
             }
         }
 
-        private void txtPathSource_TextChanged(object sender, EventArgs e)
+        private void txtDirectorySource_TextChanged(object sender, EventArgs e)
         {
-            Settings.Default.DirectorySource = this.txtPathSource.Text;
+            Settings.Default.DirectorySource = this.txtDirectorySource.Text;
             Settings.Default.Save();
         }
 
-        private void txtPathTarget_TextChanged(object sender, EventArgs e)
+        private void txtDirectoryTarget_TextChanged(object sender, EventArgs e)
         {
-            Settings.Default.DirectoryTarget = this.txtPathTarget.Text;
+            Settings.Default.DirectoryTarget = this.txtDirectoryTarget.Text;
             Settings.Default.Save();
         }
 
@@ -191,7 +191,7 @@ namespace OLKI.Programme.all2one.src.Forms
         #region BackgroundWorker events
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            this._fileMover = new FileMover.FileMover(this.txtPathSource.Text, this.txtPathTarget.Text, this._locker, this);
+            this._fileMover = new FileMover.FileMover(this.txtDirectorySource.Text, this.txtDirectoryTarget.Text, this._locker, this);
             this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
             this._fileMover.Count(this._bgwWorker, e);
             this._fileMover.Move(this._bgwWorker, e);
