@@ -128,7 +128,8 @@ namespace OLKI.Programme.all2one.src.FileMover
                 }
 
                 // Move file
-                //TODO: System.IO.File.Move(sourceFile.FullName, TargetFile.FullName);
+                if (Settings.Default.CopyMoveAction == 0) System.IO.File.Copy(sourceFile.FullName, TargetFile.FullName);
+                if (Settings.Default.CopyMoveAction == 1) System.IO.File.Move(sourceFile.FullName, TargetFile.FullName);
                 this.FileMove++;
                 return true;
             }
