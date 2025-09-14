@@ -256,18 +256,18 @@
             this.chkCreateIndex.AutoSize = true;
             this.chkCreateIndex.Location = new System.Drawing.Point(12, 263);
             this.chkCreateIndex.Name = "chkCreateIndex";
-            this.chkCreateIndex.Size = new System.Drawing.Size(208, 17);
+            this.chkCreateIndex.Size = new System.Drawing.Size(259, 17);
             this.chkCreateIndex.TabIndex = 17;
-            this.chkCreateIndex.Text = "Index Datei im Zielverzeichnis erstellen";
+            this.chkCreateIndex.Text = "Index Datei der Quelle im Zielverzeichnis erstellen";
             this.chkCreateIndex.UseVisualStyleBackColor = true;
             this.chkCreateIndex.CheckedChanged += new System.EventHandler(this.chkCreateIndex_CheckedChanged);
             // 
             // txtCreateIndex
             // 
             this.txtCreateIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtCreateIndex.Location = new System.Drawing.Point(226, 260);
+            this.txtCreateIndex.Location = new System.Drawing.Point(277, 260);
             this.txtCreateIndex.Name = "txtCreateIndex";
-            this.txtCreateIndex.Size = new System.Drawing.Size(346, 20);
+            this.txtCreateIndex.Size = new System.Drawing.Size(295, 20);
             this.txtCreateIndex.TabIndex = 18;
             this.txtCreateIndex.TextChanged += new System.EventHandler(this.txtCreateIndex_TextChanged);
             // 
