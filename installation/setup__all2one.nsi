@@ -1,4 +1,4 @@
-;NSIS Installer for all2one 1.1.1.4
+;NSIS Installer for all2one 2.0.0.5
 ;Using Modern Interface, Setup-Options, etc.
 ;Written by Oliver Kind
 
@@ -21,13 +21,13 @@
 ;Defining
 
   !define AppName          'all2one'
-  !define Version          '1.1.1.4'
+  !define Version          '2.0.0.5'
   !define Company          'OLKI-Software'
   !define Comments         'Ein Programm um schnell Dateien von einem Verzeichniss und Unterverzeichnissen in ein Verzeichniss zu verschieben'
-  !define Copyright        '2020 - Oliver Kind'
+  !define Copyright        '2025 - Oliver Kind'
   !define FinishFile       'all2one.exe'
   !define ReadmeFile       'ReadMe.txt'
-  !define EulaFile         'Eula.rtf'
+  !define EulaFile         'LGPL-License.txt'
   !define InformationFile  'Information.rtf'
 
 ;--------------------------------
@@ -54,7 +54,7 @@
   ;Install Pages
   !insertmacro MUI_PAGE_WELCOME
     !define MUI_LICENSEPAGE_RADIOBUTTONS
-  !insertmacro MUI_PAGE_LICENSE .\..\doc\${EulaFile}
+  !insertmacro MUI_PAGE_LICENSE .\..\bin\Release\licenses\${EulaFile}
     !define MUI_PAGE_HEADER_TEXT "Installationshinweise"
     !define MUI_PAGE_HEADER_SUBTEXT "Bitte lesen Sie die Hinweise zur Installation der Software"
   !insertmacro MUI_PAGE_LICENSE .\..\doc\${InformationFile}
@@ -111,16 +111,21 @@ Section ""
   SetOutPath $INSTDIR
 
   File ".\..\bin\Release\changelog.txt"
+  File ".\..\bin\Release\Interop.WIA.dll"
+  File ".\..\bin\Release\Octokit.dll"
+  File ".\..\bin\Release\OLKI.Toolbox.dll"
   File ".\..\bin\Release\all2one.exe"
-  File ".\..\bin\Release\OLKI.Tools.CommonTools.dll"
-  File ".\..\bin\Release\OLKI.Widgets.dll"
-  File ".\..\bin\Release\doc\${EulaFile}"
+  File ".\..\bin\Release\all2one.exe.config"
   File ".\..\bin\Release\doc\${InformationFile}"
   File ".\..\bin\Release\doc\${ReadmeFile}"
   File ".\..\bin\Release\Properties\Resources\ProgamIcons\program_symbol\Program_Symbol.ico"
   
   SetOutPath "$INSTDIR\Licenses"
+  File ".\..\bin\Release\Licenses\CC4.0-License.txt"
+  File ".\..\bin\Release\Licenses\CPOL-License.txt"
   File ".\..\bin\Release\Licenses\LGPL-License.txt"
+  File ".\..\bin\Release\Licenses\MIT-License (CroweMan; 22.06.2010).txt"
+  File ".\..\bin\Release\Licenses\MIT-License (octokit.net; 16.08.2017).txt"
 
   ;Create Desktop shortcut
   CreateShortCut "$DESKTOP\${AppName}.lnk" "$INSTDIR\all2one.exe" ""

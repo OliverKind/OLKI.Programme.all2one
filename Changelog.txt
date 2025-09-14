@@ -1,16 +1,6 @@
-﻿# Change Log
-All notable changes to this project will be documented in this file.
-
-
-## [Unreleased]
+﻿## [2.0.0.5] - 2025-09-14
 ### Added
-- N/A
-
-### Changed
-- N/A
-
-### Fixed
-- N/A
+- Complete overwrought
 
 ## [1.1.1.4] - 2020-04-19
 ### Fixed
