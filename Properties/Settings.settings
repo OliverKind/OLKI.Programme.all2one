@@ -20,11 +20,20 @@
     <Setting Name="Internal_SettingsUpgradet" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="DirectorySource" Type="System.String" Scope="User">
+    <Setting Name="DirectorySource" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DirectoryTarget" Type="System.String" Scope="User">
+    <Setting Name="DirectoryTarget" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CopyFiles" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CreateIndex" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CreateIndexTarget" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Index.txt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

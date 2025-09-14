@@ -50,6 +50,11 @@ namespace OLKI.Programme.all2one.src.Forms
         /// Main object for file counting and moving
         /// </summary>
         private FileMover.FileMover _fileMover;
+
+        /// <summary>
+        /// Changes are system intern
+        /// </summary>
+        private bool _systemChanged = false;
         #endregion
 
         #region Methodes
@@ -58,6 +63,7 @@ namespace OLKI.Programme.all2one.src.Forms
         /// </summary>
         public MainForm()
         {
+            this._systemChanged = true;
             InitializeComponent();
 
             this._bgwWorker = new BackgroundWorker
@@ -69,10 +75,15 @@ namespace OLKI.Programme.all2one.src.Forms
             this._bgwWorker.ProgressChanged += new ProgressChangedEventHandler(this.bgwWorker_ProgressChanged);
             this._bgwWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.bgwWorker_RunWorkerCompleted);
 
+            this.chkCopyFiles.Checked = Settings.Default.CopyFiles;
+            this.chkCreateIndex.Checked = Settings.Default.CreateIndex;
+            this.txtCreateIndex.Enabled = Settings.Default.CreateIndex;
+            this.txtCreateIndex.Text = Settings.Default.CreateIndexTarget;
             this.txtDirectorySource.Text = Settings.Default.DirectorySource;
             this.txtDirectoryTarget.Text = Settings.Default.DirectoryTarget;
 
             this.SetExistingFileTextBoxes(null);
+            this._systemChanged = false;
         }
 
         /// <summary>
@@ -144,14 +155,39 @@ namespace OLKI.Programme.all2one.src.Forms
             }
         }
 
+        private void chkCopyFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._systemChanged) return;
+            Settings.Default.CopyFiles = this.chkCopyFiles.Checked;
+            Settings.Default.Save();
+        }
+
+        private void chkCreateIndex_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._systemChanged) return;
+            this.txtCreateIndex.Enabled = this.chkCreateIndex.Checked;
+
+            Settings.Default.CreateIndex = this.chkCreateIndex.Checked;
+            Settings.Default.Save();
+        }
+
+        private void txtCreateIndex_TextChanged(object sender, EventArgs e)
+        {
+            if (this._systemChanged) return;
+            Settings.Default.CreateIndexTarget = this.txtCreateIndex.Text;
+            Settings.Default.Save();
+        }
+
         private void txtDirectorySource_TextChanged(object sender, EventArgs e)
         {
+            if (this._systemChanged) return;
             Settings.Default.DirectorySource = this.txtDirectorySource.Text;
             Settings.Default.Save();
         }
 
         private void txtDirectoryTarget_TextChanged(object sender, EventArgs e)
         {
+            if (this._systemChanged) return;
             Settings.Default.DirectoryTarget = this.txtDirectoryTarget.Text;
             Settings.Default.Save();
         }

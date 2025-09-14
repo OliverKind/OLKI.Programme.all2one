@@ -37,9 +37,9 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// <param name="e">Provides data for the BackgroundWorker</param>
         public void Count(BackgroundWorker worker, DoWorkEventArgs e)
         {
-            worker.ReportProgress((int) ProcessStep.Count_Start, FORCE_REPORTING_FLAG);
+            worker.ReportProgress((int)ProcessStep.Count_Start, FORCE_REPORTING_FLAG);
             this.CountRecursive(new DirectoryInfo(this._source), worker, e);
-            worker.ReportProgress((int) ProcessStep.Count_Finish, FORCE_REPORTING_FLAG);
+            worker.ReportProgress((int)ProcessStep.Count_Finish, FORCE_REPORTING_FLAG);
         }
 
         /// <summary>

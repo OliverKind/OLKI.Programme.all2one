@@ -21,7 +21,7 @@
  * along with this program; if not check the GitHub-Repository.
  * 
  * */
- 
+
 using OLKI.Programme.all2one.Properties;
 using OLKI.Toolbox.DirectoryAndFile;
 using System;
