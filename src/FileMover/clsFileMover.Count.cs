@@ -55,7 +55,6 @@ namespace OLKI.Programme.all2one.src.FileMover
             //Get Files
             this.FileTotalCount += directory.GetFiles().Count();
             worker.ReportProgress((int)ProcessStep.Count_Busy);
-            //Widgets.Invoke.TextBoxInv.Text(this._MainForm.txtProgressValue, this._fileCount.ToString(FORMAT_VALUE_NUMBER));
 
             //Get sub directorys
             foreach (DirectoryInfo Directory in directory.GetDirectories().OrderBy(d => d.FullName))
