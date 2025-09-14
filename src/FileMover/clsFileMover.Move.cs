@@ -35,6 +35,19 @@ namespace OLKI.Programme.all2one.src.FileMover
     public partial class FileMover
     {
         /// <summary>
+        /// Generates the target file path for a given source file.
+        /// </summary>
+        /// <remarks>The target file path is constructed by appending the name of the source file to the
+        /// directory specified in the application settings (<see cref="Settings.Default.DirectoryTarget"/>).</remarks>
+        /// <param name="sourceFile">The source file for which the target file path is generated. Cannot be null.</param>
+        /// <returns>The full path of the target file, combining the target directory from settings and the name of the source
+        /// file.</returns>
+        private string GetTargetFileName(FileInfo sourceFile)
+        {
+            return Settings.Default.DirectoryTarget + @"\" + sourceFile.Name;
+        }
+
+        /// <summary>
         /// Move files from source directory to target directory
         /// </summary>
         /// <param name="worker">BackgroundWorker for move</param>
@@ -86,7 +99,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// <returns>True if files was moves sucessfull</returns>
         private bool MoveFile(FileInfo sourceFile, BackgroundWorker worker, DoWorkEventArgs e)
         {
-            FileInfo TargetFile = new FileInfo(Settings.Default.DirectoryTarget + @"\" + sourceFile.Name);
+            FileInfo TargetFile = new FileInfo(GetTargetFileName(sourceFile));
             try
             {
                 if (TargetFile.Exists)
