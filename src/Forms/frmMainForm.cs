@@ -233,7 +233,7 @@ namespace OLKI.Programme.all2one.src.Forms
         #region BackgroundWorker events
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            this._fileMover = new FileMover.FileMover(this.txtDirectorySource.Text, this.txtDirectoryTarget.Text, this._locker, this);
+            this._fileMover = new FileMover.FileMover(this.chkCopyFiles.Checked, this.chkCreateIndex.Checked, this.txtCreateIndex.Text, this.txtDirectorySource.Text, this.txtDirectoryTarget.Text, this._locker, this);
             this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
             this._fileMover.Count(this._bgwWorker, e);
             this._fileMover.Move(this._bgwWorker, e);
