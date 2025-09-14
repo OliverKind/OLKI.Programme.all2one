@@ -23,7 +23,7 @@
     <Setting Name="DirectorySource" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="BrowseDirectoryTarget" Type="System.String" Scope="User">
+    <Setting Name="DirectoryTarget" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

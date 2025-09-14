@@ -56,6 +56,7 @@
             this.txtPathSource.Name = "txtPathSource";
             this.txtPathSource.Size = new System.Drawing.Size(354, 20);
             this.txtPathSource.TabIndex = 1;
+            this.txtPathSource.TextChanged += new System.EventHandler(this.txtPathSource_TextChanged);
             // 
             // txtPathTarget
             // 
@@ -64,6 +65,7 @@
             this.txtPathTarget.Name = "txtPathTarget";
             this.txtPathTarget.Size = new System.Drawing.Size(354, 20);
             this.txtPathTarget.TabIndex = 4;
+            this.txtPathTarget.TextChanged += new System.EventHandler(this.txtPathTarget_TextChanged);
             // 
             // label1
             // 

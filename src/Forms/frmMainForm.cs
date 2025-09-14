@@ -69,6 +69,9 @@ namespace OLKI.Programme.all2one.src.Forms
             this._bgwWorker.ProgressChanged += new ProgressChangedEventHandler(this.bgwWorker_ProgressChanged);
             this._bgwWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.bgwWorker_RunWorkerCompleted);
 
+            this.txtPathSource.Text = Settings.Default.DirectorySource;
+            this.txtPathTarget.Text = Settings.Default.DirectoryTarget;
+
             this.SetExistingFileTextBoxes(null);
         }
 
@@ -141,9 +144,16 @@ namespace OLKI.Programme.all2one.src.Forms
             }
         }
 
-        private void FileMover_ExistingFileSettingsChanged(object sender, EventArgs e)
+        private void txtPathSource_TextChanged(object sender, EventArgs e)
         {
-            this.SetExistingFileTextBoxes(null);
+            Settings.Default.DirectorySource = this.txtPathSource.Text;
+            Settings.Default.Save();
+        }
+
+        private void txtPathTarget_TextChanged(object sender, EventArgs e)
+        {
+            Settings.Default.DirectoryTarget = this.txtPathTarget.Text;
+            Settings.Default.Save();
         }
 
         #region Controle Buttons
@@ -209,7 +219,6 @@ namespace OLKI.Programme.all2one.src.Forms
                         break;
                     case FileMover.FileMover.ProcessStep.Count_Busy:
                         ExtProgrBarInv.Value(this.epbProgress, this._fileMover.FileTotalCount);
-                        //TextBoxInv.Text(this.txtProgressValue, this._fileMover.FileTotalCount.ToString(FORMAT_VALUE_NUMBER));
                         break;
                     case FileMover.FileMover.ProcessStep.Count_Finish:
                         ExtProgrBarInv.Style(this.epbProgress, ProgressBarStyle.Blocks);
@@ -255,6 +264,11 @@ namespace OLKI.Programme.all2one.src.Forms
             this.btnProcessCancel.Enabled = false;
 
             MessageBox.Show(this, string.Format(Stringtable._0x0002m, new object[] { this._fileMover.FileTotalCount, this._fileMover.FileMove, this._fileMover.FileSkip, this._fileMover.FileExceptions }), Stringtable._0x0002c, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void FileMover_ExistingFileSettingsChanged(object sender, EventArgs e)
+        {
+            this.SetExistingFileTextBoxes(null);
         }
         #endregion
         #endregion

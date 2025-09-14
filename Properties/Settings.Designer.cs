@@ -116,12 +116,12 @@ namespace OLKI.Programme.all2one.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string BrowseDirectoryTarget {
+        public string DirectoryTarget {
             get {
-                return ((string)(this["BrowseDirectoryTarget"]));
+                return ((string)(this["DirectoryTarget"]));
             }
             set {
-                this["BrowseDirectoryTarget"] = value;
+                this["DirectoryTarget"] = value;
             }
         }
     }
