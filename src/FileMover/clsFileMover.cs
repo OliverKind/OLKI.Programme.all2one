@@ -131,7 +131,6 @@ namespace OLKI.Programme.all2one.src.FileMover
         public FileMover(ManualResetEvent locker, MainForm mainForm)
         {
             this._locker = locker;
-
             this._mainForm = mainForm;
         }
 
