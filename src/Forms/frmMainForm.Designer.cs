@@ -338,6 +338,7 @@
             this.Name = "MainForm";
             this.Text = "all2One";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.MainForm_HelpButtonClicked);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.grbHandleExistingFiles.ResumeLayout(false);
             this.grbHandleExistingFiles.PerformLayout();
             this.ResumeLayout(false);

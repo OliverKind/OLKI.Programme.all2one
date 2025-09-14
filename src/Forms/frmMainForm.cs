@@ -148,19 +148,30 @@ namespace OLKI.Programme.all2one.src.Forms
             System.Reflection.Assembly Assembly = System.Reflection.Assembly.GetExecutingAssembly();
             Image AppImage = Resources.program_symbol_256;
             Image ProImage = null;
-            OLKI.Toolbox.Widgets.AboutForm.AboutForm AboutForm = new OLKI.Toolbox.Widgets.AboutForm.AboutForm(Assembly, AppImage, ProImage)
+            AboutForm AboutForm = new AboutForm(Assembly, AppImage, ProImage)
             {
                 Credits = Resources.Credits,
                 LicenseDirectory = System.IO.Path.GetDirectoryName(Assembly.Location) + @"\Licenses\",
                 ShowUpdateControles = true,
                 UpdateOnStartup = Settings.Default.AppUpdate_CheckAtStartUp
             };
+            AboutForm.CheckForUpdate += new LinkLabelLinkClickedEventHandler(delegate (object s, LinkLabelLinkClickedEventArgs ea)
+            {
+                Program.CheckForUpdate(this, false);
+            });
+            AboutForm.UpdateOnStartupChanged += new EventHandler(delegate (object s, EventArgs ea)
+            {
+                Settings.Default.AppUpdate_CheckAtStartUp = AboutForm.UpdateOnStartup;
+                Settings.Default.Save();
+            });
             AboutForm.Show(this);
-
-            //AboutForm AboutForm = new AboutForm();
-            //AboutForm.ShowDialog(this);
-            //AboutForm.Dispose();
             e.Cancel = true;
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            // Check for Updates for the Apllication
+            if (Settings.Default.AppUpdate_CheckAtStartUp) Program.CheckForUpdate(this, true);
         }
 
         private void btnHandleExistingFile_SetDefault_Click(object sender, EventArgs e)

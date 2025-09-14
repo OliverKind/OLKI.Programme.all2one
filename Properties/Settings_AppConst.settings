@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OLKI.Programme.all2one.Properties" GeneratedClassName="Settings_AppConst">
+  <Profiles />
+  <Settings>
+    <Setting Name="AppUpdate_ChangeLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Changelog.txt</Value>
+    </Setting>
+    <Setting Name="AppUpdate_Name" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OLKI.Programme.all2one</Value>
+    </Setting>
+    <Setting Name="AppUpdate_Owner" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OliverKind</Value>
+    </Setting>
+    <Setting Name="AppUpdate_SetupSearchPattern" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">all2one__v{0}__Setup.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

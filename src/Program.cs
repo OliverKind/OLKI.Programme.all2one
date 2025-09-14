@@ -24,7 +24,9 @@
 
 using OLKI.Programme.all2one.Properties;
 using OLKI.Programme.all2one.src.Forms;
+using OLKI.Toolbox.UpdateApp;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace OLKI.Programme.all2one
@@ -82,6 +84,26 @@ namespace OLKI.Programme.all2one
             }
 
             Application.Run(new MainForm());
+        }
+
+        /// <summary>
+        /// Check for Updates for the Apllication and Install them if available
+        /// <param name="mainForm">MainForm of the Application</param>
+        /// <paramref name="hideMessages"/>Hide Messages for no update or if update data can't be determinated</paramref>
+        /// </summary>
+        internal static void CheckForUpdate(IWin32Window mainForm, bool hideMessages)
+        {
+            UpdateApp AppUpdater = new UpdateApp();
+            ReleaseData LastReleaseData = AppUpdater.GetLastReleaseData(
+                Settings_AppConst.Default.AppUpdate_Owner,
+                Settings_AppConst.Default.AppUpdate_Name,
+                Settings_AppConst.Default.AppUpdate_ChangeLog,
+                Settings_AppConst.Default.AppUpdate_SetupSearchPattern,
+                out Exception GetDataEx);
+            ReleaseVersion ActualVersion = new ReleaseVersion(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+
+            // Exit application if update was downloaded
+            if (AppUpdater.UpdateDownload(mainForm, ActualVersion, LastReleaseData, GetDataEx, hideMessages)) Application.Exit();
         }
         #endregion
     }
