@@ -75,12 +75,17 @@ namespace OLKI.Programme.all2one.src.Forms
             this._bgwWorker.ProgressChanged += new ProgressChangedEventHandler(this.bgwWorker_ProgressChanged);
             this._bgwWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.bgwWorker_RunWorkerCompleted);
 
-            this.chkCopyFiles.Checked = Settings.Default.CopyFiles;
+            this.chkCopyMoveFiles.Checked = Settings.Default.CopyMoveFiles;
             this.chkCreateIndex.Checked = Settings.Default.CreateIndex;
+            this.chkCopyMoveKeepStucture.Checked = Settings.Default.CopyMoveKeepStructure;
+            this.rabCopyFiles.Checked = Settings.Default.CopyMoveAction == 0;
+            this.rabMoveFiles.Checked = Settings.Default.CopyMoveAction == 1;
             this.txtCreateIndex.Enabled = Settings.Default.CreateIndex;
             this.txtCreateIndex.Text = Settings.Default.CreateIndexTarget;
             this.txtDirectorySource.Text = Settings.Default.DirectorySource;
             this.txtDirectoryTarget.Text = Settings.Default.DirectoryTarget;
+
+            this.chkCopyMoveFiles_CheckedChanged(this, new EventArgs());
 
             this.SetExistingFileTextBoxes(null);
             this._systemChanged = false;
@@ -155,10 +160,20 @@ namespace OLKI.Programme.all2one.src.Forms
             }
         }
 
-        private void chkCopyFiles_CheckedChanged(object sender, EventArgs e)
+        private void chkCopyMoveFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            this.chkCopyMoveKeepStucture.Enabled = this.chkCopyMoveFiles.Checked;
+            this.rabCopyFiles.Enabled = this.chkCopyMoveFiles.Checked;
+            this.rabMoveFiles.Enabled = this.chkCopyMoveFiles.Checked;
+
+            if (this._systemChanged) return;
+            Settings.Default.CopyMoveFiles = this.chkCopyMoveFiles.Checked;
+            Settings.Default.Save();
+        }
+        private void chkCopyMoveKeepStucture_CheckedChanged(object sender, EventArgs e)
         {
             if (this._systemChanged) return;
-            Settings.Default.CopyFiles = this.chkCopyFiles.Checked;
+            Settings.Default.CopyMoveKeepStructure = this.chkCopyMoveKeepStucture.Checked;
             Settings.Default.Save();
         }
 
@@ -168,6 +183,24 @@ namespace OLKI.Programme.all2one.src.Forms
             this.txtCreateIndex.Enabled = this.chkCreateIndex.Checked;
 
             Settings.Default.CreateIndex = this.chkCreateIndex.Checked;
+            Settings.Default.Save();
+        }
+
+        private void rabCopyFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._systemChanged) return;
+            this.rabMoveFiles.Checked = !this.rabCopyFiles.Checked;
+
+            Settings.Default.CopyMoveAction = this.rabCopyFiles.Checked ? 0 : 1;
+            Settings.Default.Save();
+        }
+
+        private void rabMoveFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this._systemChanged) return;
+            this.rabCopyFiles.Checked = !this.rabMoveFiles.Checked;
+
+            Settings.Default.CopyMoveAction = this.rabMoveFiles.Checked ? 1 :0;
             Settings.Default.Save();
         }
 
@@ -214,7 +247,7 @@ namespace OLKI.Programme.all2one.src.Forms
 
         private void btnProcessStart_Click(object sender, EventArgs e)
         {
-            if (!this.chkCopyFiles.Checked && !this.chkCreateIndex.Checked)
+            if (!this.chkCopyMoveFiles.Checked && !this.chkCreateIndex.Checked)
             {
                 MessageBox.Show(this, Stringtable._0x0005m, Stringtable._0x0005c, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -233,7 +266,7 @@ namespace OLKI.Programme.all2one.src.Forms
         #region BackgroundWorker events
         private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            this._fileMover = new FileMover.FileMover(this.chkCopyFiles.Checked, this.chkCreateIndex.Checked, this.txtCreateIndex.Text, this.txtDirectorySource.Text, this.txtDirectoryTarget.Text, this._locker, this);
+            this._fileMover = new FileMover.FileMover(this.chkCopyMoveFiles.Checked, this.chkCreateIndex.Checked, this.txtCreateIndex.Text, this.txtDirectorySource.Text, this.txtDirectoryTarget.Text, this._locker, this);
             this._fileMover.ExistingFileSettingsChanged += new EventHandler(this.FileMover_ExistingFileSettingsChanged);
             this._fileMover.Count(this._bgwWorker, e);
             this._fileMover.Move(this._bgwWorker, e);

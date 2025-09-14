@@ -26,7 +26,7 @@
     <Setting Name="DirectoryTarget" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="CopyFiles" Roaming="true" Type="System.Boolean" Scope="User">
+    <Setting Name="CopyMoveFiles" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CreateIndex" Roaming="true" Type="System.Boolean" Scope="User">
@@ -34,6 +34,12 @@
     </Setting>
     <Setting Name="CreateIndexTarget" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">Index.txt</Value>
+    </Setting>
+    <Setting Name="CopyMoveAction" Roaming="true" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CopyMoveKeepStructure" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -131,12 +131,12 @@ namespace OLKI.Programme.all2one.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public bool CopyFiles {
+        public bool CopyMoveFiles {
             get {
-                return ((bool)(this["CopyFiles"]));
+                return ((bool)(this["CopyMoveFiles"]));
             }
             set {
-                this["CopyFiles"] = value;
+                this["CopyMoveFiles"] = value;
             }
         }
         
@@ -163,6 +163,31 @@ namespace OLKI.Programme.all2one.Properties {
             }
             set {
                 this["CreateIndexTarget"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public int CopyMoveAction {
+            get {
+                return ((int)(this["CopyMoveAction"]));
+            }
+            set {
+                this["CopyMoveAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CopyMoveKeepStructure {
+            get {
+                return ((bool)(this["CopyMoveKeepStructure"]));
+            }
+            set {
+                this["CopyMoveKeepStructure"] = value;
             }
         }
     }
