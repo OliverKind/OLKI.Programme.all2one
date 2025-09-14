@@ -45,9 +45,7 @@
             this.txtRemainTime = new System.Windows.Forms.TextBox();
             this.lblElapsedTime = new System.Windows.Forms.Label();
             this.btnProcessPause = new System.Windows.Forms.Button();
-            this.txtProgressPercent = new System.Windows.Forms.TextBox();
-            this.txtProgressValue = new System.Windows.Forms.TextBox();
-            this.pbaProgress = new System.Windows.Forms.ProgressBar();
+            this.epbProgress = new OLKI.Toolbox.Widgets.ExtProgressBar();
             this.grbHandleExistingFiles.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -221,40 +219,28 @@
             this.btnProcessPause.UseVisualStyleBackColor = true;
             this.btnProcessPause.Click += new System.EventHandler(this.btnProcessPause_Click);
             // 
-            // txtProgressPercent
+            // epbProgress
             // 
-            this.txtProgressPercent.Location = new System.Drawing.Point(368, 247);
-            this.txtProgressPercent.Name = "txtProgressPercent";
-            this.txtProgressPercent.ReadOnly = true;
-            this.txtProgressPercent.Size = new System.Drawing.Size(35, 20);
-            this.txtProgressPercent.TabIndex = 12;
-            // 
-            // txtProgressValue
-            // 
-            this.txtProgressValue.Location = new System.Drawing.Point(409, 247);
-            this.txtProgressValue.Name = "txtProgressValue";
-            this.txtProgressValue.ReadOnly = true;
-            this.txtProgressValue.Size = new System.Drawing.Size(163, 20);
-            this.txtProgressValue.TabIndex = 13;
-            // 
-            // pbaProgress
-            // 
-            this.pbaProgress.Location = new System.Drawing.Point(12, 244);
-            this.pbaProgress.Name = "pbaProgress";
-            this.pbaProgress.Size = new System.Drawing.Size(350, 23);
-            this.pbaProgress.TabIndex = 11;
+            this.epbProgress.AutoByteDimension = false;
+            this.epbProgress.ByteDimension = OLKI.Toolbox.DirectoryAndFile.FileSize.Dimension.NoDimension;
+            this.epbProgress.DecimalDigits = ((uint)(0u));
+            this.epbProgress.Location = new System.Drawing.Point(12, 244);
+            this.epbProgress.MinimumSize = new System.Drawing.Size(300, 23);
+            this.epbProgress.Name = "epbProgress";
+            this.epbProgress.ShowDescriptionText = false;
+            this.epbProgress.ShowDimensionComboBox = false;
+            this.epbProgress.Size = new System.Drawing.Size(560, 23);
+            this.epbProgress.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 279);
+            this.Controls.Add(this.epbProgress);
             this.Controls.Add(this.btnProcessPause);
             this.Controls.Add(this.lblElapsedTime);
             this.Controls.Add(this.txtRemainTime);
-            this.Controls.Add(this.txtProgressPercent);
-            this.Controls.Add(this.txtProgressValue);
-            this.Controls.Add(this.pbaProgress);
             this.Controls.Add(this.btnBrowseDirectoryTarget);
             this.Controls.Add(this.btnBrowseDirectorySource);
             this.Controls.Add(this.btnProcessCancel);
@@ -297,9 +283,7 @@
         private System.Windows.Forms.TextBox txtRemainTime;
         private System.Windows.Forms.Label lblElapsedTime;
         internal System.Windows.Forms.Button btnProcessPause;
-        internal System.Windows.Forms.TextBox txtProgressPercent;
-        internal System.Windows.Forms.TextBox txtProgressValue;
-        internal System.Windows.Forms.ProgressBar pbaProgress;
+        private Toolbox.Widgets.ExtProgressBar epbProgress;
     }
 }
 
