@@ -93,7 +93,9 @@
     <Content Include="Resources\Icons\HandleExistingFile.png" />
     <Content Include="Resources\Icons\Pause.png" />
     <Content Include="Resources\Icons\Start.png" />
-    <Content Include="Resources\ProgamIcons\Program_Symbol.ico" />
+    <Content Include="Resources\ProgamIcons\Program_Symbol.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\ProgamIcons\program_symbol_256.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
