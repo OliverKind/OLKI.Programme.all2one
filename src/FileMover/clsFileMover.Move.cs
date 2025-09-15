@@ -97,8 +97,7 @@ namespace OLKI.Programme.all2one.src.FileMover
                 _locker.WaitOne();
 
                 if (Settings.Default.CreateIndex) this.WriteIndex("\t" + File.Name, true);
-
-                this.MoveFile(File, worker, e);
+                if (Settings.Default.CopyMoveFiles) this.MoveFile(File, worker, e);
                 worker.ReportProgress((int)ProcessStep.Move_Busy);
             }
 
