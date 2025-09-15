@@ -1,4 +1,4 @@
-﻿## [2.0.1.6] - 2025-09-??
+﻿## [2.0.1.6] - 2025-09-15
 ### Changed
 - Code Optimization
 - Internal changes
