@@ -95,7 +95,7 @@ namespace OLKI.Programme.all2one.src.Forms
                     this.rabMoveFiles.Checked = true;
                     break;
                 default:
-                     throw new ArgumentOutOfRangeException("Settings.Default.ProcessAction", nameof(Settings.Default.ProcessAction));
+                    throw new ArgumentOutOfRangeException("Settings.Default.ProcessAction", nameof(Settings.Default.ProcessAction));
             }
 
             this.chkCopyMoveFiles_CheckedChanged(this, new EventArgs());
