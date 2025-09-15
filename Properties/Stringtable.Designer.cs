@@ -145,5 +145,23 @@ namespace OLKI.Programme.all2one.Properties {
                 return ResourceManager.GetString("0x0005m", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Pfade nicht angegeben ähnelt.
+        /// </summary>
+        internal static string _0x0006c {
+            get {
+                return ResourceManager.GetString("0x0006c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Quell- oder Zielverzeichniss sind nicht angegeben. ähnelt.
+        /// </summary>
+        internal static string _0x0006m {
+            get {
+                return ResourceManager.GetString("0x0006m", resourceCulture);
+            }
+        }
     }
 }

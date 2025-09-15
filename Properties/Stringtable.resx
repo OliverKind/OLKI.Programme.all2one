@@ -155,4 +155,10 @@ Fehler beim Verschieben:
   <data name="0x0005m" xml:space="preserve">
     <value>Es wurde keine Aufgabe ausgewählt. Bitte wählen Sie aus, ob Dateien kopiert und/oder ein Index erstellt werden soll.</value>
   </data>
+  <data name="0x0006c" xml:space="preserve">
+    <value>Pfade nicht angegeben</value>
+  </data>
+  <data name="0x0006m" xml:space="preserve">
+    <value>Quell- oder Zielverzeichniss sind nicht angegeben.</value>
+  </data>
 </root>

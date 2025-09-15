@@ -298,6 +298,11 @@ namespace OLKI.Programme.all2one.src.Forms
                 MessageBox.Show(this, Stringtable._0x0005m, Stringtable._0x0005c, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (this.txtDirectorySource.Text.Length == 0 || this.txtDirectoryTarget.Text.Length == 0)
+            {
+                MessageBox.Show(this, Stringtable._0x0006m, Stringtable._0x0006c, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             this.btnProcessStart.Enabled = false;
             this.btnProcessPause.Enabled = true;
