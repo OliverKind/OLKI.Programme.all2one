@@ -57,6 +57,15 @@ namespace OLKI.Programme.all2one.src.FileMover
 
         #region Enums
         /// <summary>
+        /// Specifies the type of action to perform on the main process
+        /// </summary>
+        internal enum ProcessAction
+        {
+            Copy,
+            Move
+        }
+
+        /// <summary>
         /// An enomeration to indicate the step of an process
         /// </summary>
         internal enum ProcessStep

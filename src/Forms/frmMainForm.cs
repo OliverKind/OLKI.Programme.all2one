@@ -23,6 +23,7 @@
  * */
 
 using OLKI.Programme.all2one.Properties;
+using static OLKI.Programme.all2one.src.FileMover.FileMover;
 using OLKI.Toolbox.Common;
 using OLKI.Toolbox.DirectoryAndFile;
 using OLKI.Toolbox.Widgets.AboutForm;
@@ -30,7 +31,6 @@ using OLKI.Toolbox.Widgets.Invoke;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -81,12 +81,22 @@ namespace OLKI.Programme.all2one.src.Forms
             this.chkCopyMoveFiles.Checked = Settings.Default.CopyMoveFiles;
             this.chkCreateIndex.Checked = Settings.Default.CreateIndex;
             this.chkCopyMoveKeepStucture.Checked = Settings.Default.CopyMoveKeepStructure;
-            this.rabCopyFiles.Checked = Settings.Default.CopyMoveAction == 0;
-            this.rabMoveFiles.Checked = Settings.Default.CopyMoveAction == 1;
             this.txtCreateIndex.Enabled = Settings.Default.CreateIndex;
             this.txtCreateIndex.Text = Settings.Default.CreateIndexTarget;
             this.txtDirectorySource.Text = Settings.Default.DirectorySource;
             this.txtDirectoryTarget.Text = Settings.Default.DirectoryTarget;
+
+            switch ((ProcessAction)Settings.Default.ProcessAction)
+            {
+                case ProcessAction.Copy:
+                    this.rabCopyFiles.Checked = true;
+                    break;
+                case ProcessAction.Move:
+                    this.rabMoveFiles.Checked = true;
+                    break;
+                default:
+                     throw new ArgumentOutOfRangeException("Settings.Default.ProcessAction", nameof(Settings.Default.ProcessAction));
+            }
 
             this.chkCopyMoveFiles_CheckedChanged(this, new EventArgs());
 
@@ -217,8 +227,11 @@ namespace OLKI.Programme.all2one.src.Forms
             if (this._systemChanged) return;
             this.rabMoveFiles.Checked = !this.rabCopyFiles.Checked;
 
-            Settings.Default.CopyMoveAction = this.rabCopyFiles.Checked ? 0 : 1;
-            Settings.Default.Save();
+            if (this.rabCopyFiles.Checked)
+            {
+                Settings.Default.ProcessAction = (int)ProcessAction.Copy;
+                Settings.Default.Save();
+            }
         }
 
         private void rabMoveFiles_CheckedChanged(object sender, EventArgs e)
@@ -226,8 +239,11 @@ namespace OLKI.Programme.all2one.src.Forms
             if (this._systemChanged) return;
             this.rabCopyFiles.Checked = !this.rabMoveFiles.Checked;
 
-            Settings.Default.CopyMoveAction = this.rabMoveFiles.Checked ? 1 : 0;
-            Settings.Default.Save();
+            if (this.rabMoveFiles.Checked)
+            {
+                Settings.Default.ProcessAction = (int)ProcessAction.Move;
+                Settings.Default.Save();
+            }
         }
 
         private void txtCreateIndex_TextChanged(object sender, EventArgs e)

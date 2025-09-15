@@ -163,8 +163,20 @@ namespace OLKI.Programme.all2one.src.FileMover
                 }
 
                 // Move file
-                if (Settings.Default.CopyMoveAction == 0) System.IO.File.Copy(sourceFile.FullName, TargetFile.FullName);
-                if (Settings.Default.CopyMoveAction == 1) System.IO.File.Move(sourceFile.FullName, TargetFile.FullName);
+                switch ((ProcessAction)Settings.Default.ProcessAction)
+                {
+                    case ProcessAction.Copy:
+                        System.IO.File.Copy(sourceFile.FullName, TargetFile.FullName);
+                        break;
+                    case ProcessAction.Move:
+                        System.IO.File.Move(sourceFile.FullName, TargetFile.FullName);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException("Settings.Default.ProcessAction", nameof(Settings.Default.ProcessAction));
+                }
+
+                if (Settings.Default.ProcessAction == 0) System.IO.File.Copy(sourceFile.FullName, TargetFile.FullName);
+                if (Settings.Default.ProcessAction == 1) System.IO.File.Move(sourceFile.FullName, TargetFile.FullName);
                 this.FileMove++;
                 return true;
             }

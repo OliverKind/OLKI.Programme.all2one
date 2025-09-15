@@ -170,12 +170,12 @@ namespace OLKI.Programme.all2one.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public int CopyMoveAction {
+        public int ProcessAction {
             get {
-                return ((int)(this["CopyMoveAction"]));
+                return ((int)(this["ProcessAction"]));
             }
             set {
-                this["CopyMoveAction"] = value;
+                this["ProcessAction"] = value;
             }
         }
         

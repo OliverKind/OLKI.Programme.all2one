@@ -35,7 +35,7 @@
     <Setting Name="CreateIndexTarget" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">Index.txt</Value>
     </Setting>
-    <Setting Name="CopyMoveAction" Roaming="true" Type="System.Int32" Scope="User">
+    <Setting Name="ProcessAction" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="CopyMoveKeepStructure" Roaming="true" Type="System.Boolean" Scope="User">
