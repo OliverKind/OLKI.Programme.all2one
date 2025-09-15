@@ -257,6 +257,10 @@ namespace OLKI.Programme.all2one.src.Forms
         {
             if (this._systemChanged) return;
             Settings.Default.DirectorySource = this.txtDirectorySource.Text;
+            if (Settings.Default.DirectorySource.Length > 1 && Settings.Default.DirectorySource.Substring(Settings.Default.DirectorySource.Length - 1, 1) == @"\")
+            {
+                Settings.Default.DirectorySource = Settings.Default.DirectorySource.Substring(0, Settings.Default.DirectorySource.Length - 1);
+            }
             Settings.Default.Save();
         }
 
