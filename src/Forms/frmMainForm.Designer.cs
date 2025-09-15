@@ -131,7 +131,7 @@
             // 
             // btnHandleExistingFile_SetDefault
             // 
-            this.btnHandleExistingFile_SetDefault.Image = ((System.Drawing.Image)(resources.GetObject("btnHandleExistingFile_SetDefault.Image")));
+            this.btnHandleExistingFile_SetDefault.Image = global::OLKI.Programme.all2one.Properties.Resources.HandleExistingFile;
             this.btnHandleExistingFile_SetDefault.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHandleExistingFile_SetDefault.Location = new System.Drawing.Point(6, 19);
             this.btnHandleExistingFile_SetDefault.Name = "btnHandleExistingFile_SetDefault";
@@ -146,12 +146,12 @@
             // 
             this.btnProcessCancel.Enabled = false;
             this.btnProcessCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnProcessCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnProcessCancel.Image")));
+            this.btnProcessCancel.Image = global::OLKI.Programme.all2one.Properties.Resources.Cancel;
             this.btnProcessCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProcessCancel.Location = new System.Drawing.Point(368, 286);
             this.btnProcessCancel.Name = "btnProcessCancel";
             this.btnProcessCancel.Size = new System.Drawing.Size(204, 68);
-            this.btnProcessCancel.TabIndex = 10;
+            this.btnProcessCancel.TabIndex = 17;
             this.btnProcessCancel.Text = "Abbrechen";
             this.btnProcessCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcessCancel.UseVisualStyleBackColor = true;
@@ -160,12 +160,12 @@
             // btnProcessStart
             // 
             this.btnProcessStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessStart.Image = ((System.Drawing.Image)(resources.GetObject("btnProcessStart.Image")));
+            this.btnProcessStart.Image = global::OLKI.Programme.all2one.Properties.Resources.Start;
             this.btnProcessStart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProcessStart.Location = new System.Drawing.Point(12, 286);
             this.btnProcessStart.Name = "btnProcessStart";
             this.btnProcessStart.Size = new System.Drawing.Size(270, 68);
-            this.btnProcessStart.TabIndex = 9;
+            this.btnProcessStart.TabIndex = 15;
             this.btnProcessStart.Text = "Daten verschieben";
             this.btnProcessStart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcessStart.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             // 
             // btnDirectorySource
             // 
-            this.btnDirectorySource.Image = ((System.Drawing.Image)(resources.GetObject("btnDirectorySource.Image")));
+            this.btnDirectorySource.Image = global::OLKI.Programme.all2one.Properties.Resources.Browse;
             this.btnDirectorySource.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDirectorySource.Location = new System.Drawing.Point(442, 10);
             this.btnDirectorySource.Name = "btnDirectorySource";
@@ -186,7 +186,7 @@
             // 
             // btnDirectoryTarget
             // 
-            this.btnDirectoryTarget.Image = ((System.Drawing.Image)(resources.GetObject("btnDirectoryTarget.Image")));
+            this.btnDirectoryTarget.Image = global::OLKI.Programme.all2one.Properties.Resources.Browse;
             this.btnDirectoryTarget.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDirectoryTarget.Location = new System.Drawing.Point(442, 36);
             this.btnDirectoryTarget.Name = "btnDirectoryTarget";
@@ -218,11 +218,11 @@
             // 
             this.btnProcessPause.Enabled = false;
             this.btnProcessPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessPause.Image = ((System.Drawing.Image)(resources.GetObject("btnProcessPause.Image")));
+            this.btnProcessPause.Image = global::OLKI.Programme.all2one.Properties.Resources.Pause;
             this.btnProcessPause.Location = new System.Drawing.Point(288, 286);
             this.btnProcessPause.Name = "btnProcessPause";
             this.btnProcessPause.Size = new System.Drawing.Size(74, 68);
-            this.btnProcessPause.TabIndex = 14;
+            this.btnProcessPause.TabIndex = 16;
             this.btnProcessPause.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcessPause.UseVisualStyleBackColor = true;
             this.btnProcessPause.Click += new System.EventHandler(this.btnProcessPause_Click);
@@ -238,7 +238,7 @@
             this.epbProgress.ShowDescriptionText = false;
             this.epbProgress.ShowDimensionComboBox = false;
             this.epbProgress.Size = new System.Drawing.Size(560, 23);
-            this.epbProgress.TabIndex = 15;
+            this.epbProgress.TabIndex = 18;
             // 
             // chkCopyMoveFiles
             // 
@@ -246,7 +246,7 @@
             this.chkCopyMoveFiles.Location = new System.Drawing.Point(12, 171);
             this.chkCopyMoveFiles.Name = "chkCopyMoveFiles";
             this.chkCopyMoveFiles.Size = new System.Drawing.Size(256, 17);
-            this.chkCopyMoveFiles.TabIndex = 16;
+            this.chkCopyMoveFiles.TabIndex = 9;
             this.chkCopyMoveFiles.Text = "Dateien im Zielverzeichnis verschieben/kopieren";
             this.chkCopyMoveFiles.UseVisualStyleBackColor = true;
             this.chkCopyMoveFiles.CheckedChanged += new System.EventHandler(this.chkCopyMoveFiles_CheckedChanged);
@@ -257,7 +257,7 @@
             this.chkCreateIndex.Location = new System.Drawing.Point(12, 263);
             this.chkCreateIndex.Name = "chkCreateIndex";
             this.chkCreateIndex.Size = new System.Drawing.Size(259, 17);
-            this.chkCreateIndex.TabIndex = 17;
+            this.chkCreateIndex.TabIndex = 13;
             this.chkCreateIndex.Text = "Index Datei der Quelle im Zielverzeichnis erstellen";
             this.chkCreateIndex.UseVisualStyleBackColor = true;
             this.chkCreateIndex.CheckedChanged += new System.EventHandler(this.chkCreateIndex_CheckedChanged);
@@ -268,7 +268,7 @@
             this.txtCreateIndex.Location = new System.Drawing.Point(277, 260);
             this.txtCreateIndex.Name = "txtCreateIndex";
             this.txtCreateIndex.Size = new System.Drawing.Size(295, 20);
-            this.txtCreateIndex.TabIndex = 18;
+            this.txtCreateIndex.TabIndex = 14;
             this.txtCreateIndex.TextChanged += new System.EventHandler(this.txtCreateIndex_TextChanged);
             // 
             // rabCopyFiles
@@ -277,7 +277,7 @@
             this.rabCopyFiles.Location = new System.Drawing.Point(36, 217);
             this.rabCopyFiles.Name = "rabCopyFiles";
             this.rabCopyFiles.Size = new System.Drawing.Size(106, 17);
-            this.rabCopyFiles.TabIndex = 19;
+            this.rabCopyFiles.TabIndex = 11;
             this.rabCopyFiles.TabStop = true;
             this.rabCopyFiles.Text = "Dateien kopieren";
             this.rabCopyFiles.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.rabMoveFiles.Location = new System.Drawing.Point(36, 240);
             this.rabMoveFiles.Name = "rabMoveFiles";
             this.rabMoveFiles.Size = new System.Drawing.Size(123, 17);
-            this.rabMoveFiles.TabIndex = 20;
+            this.rabMoveFiles.TabIndex = 12;
             this.rabMoveFiles.TabStop = true;
             this.rabMoveFiles.Text = "Dateien verschieben";
             this.rabMoveFiles.UseVisualStyleBackColor = true;
@@ -301,7 +301,7 @@
             this.chkCopyMoveKeepStucture.Location = new System.Drawing.Point(36, 194);
             this.chkCopyMoveKeepStucture.Name = "chkCopyMoveKeepStucture";
             this.chkCopyMoveKeepStucture.Size = new System.Drawing.Size(324, 17);
-            this.chkCopyMoveKeepStucture.TabIndex = 21;
+            this.chkCopyMoveKeepStucture.TabIndex = 10;
             this.chkCopyMoveKeepStucture.Text = "Ordnerstruktur im Dateinamen behlaten (\\ wird ersetzt druch @)";
             this.chkCopyMoveKeepStucture.UseVisualStyleBackColor = true;
             this.chkCopyMoveKeepStucture.CheckedChanged += new System.EventHandler(this.chkCopyMoveKeepStucture_CheckedChanged);

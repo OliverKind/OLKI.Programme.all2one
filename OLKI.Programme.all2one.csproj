@@ -88,10 +88,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Program_Symbol.ico" />
-    <Content Include="Properties\Resources\ProgamIcons\program_symbol\Program_Symbol.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Properties\Resources\ProgamIcons\program_symbol\program_symbol_256.png" />
+    <Content Include="Resources\Icons\Browse.png" />
+    <Content Include="Resources\Icons\Cancel.png" />
+    <Content Include="Resources\Icons\HandleExistingFile.png" />
+    <Content Include="Resources\Icons\Pause.png" />
+    <Content Include="Resources\Icons\Start.png" />
+    <Content Include="Resources\ProgamIcons\Program_Symbol.ico" />
+    <Content Include="Resources\ProgamIcons\program_symbol_256.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
