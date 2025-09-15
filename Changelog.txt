@@ -1,4 +1,11 @@
-﻿## [2.0.2.7] - 2025-09-15
+﻿## [2.0.3.8] - 2025-09-15
+### Added
+- Check for empty source-/target-Path
+
+### Fixed
+- Remove following \ from path
+
+## [2.0.2.7] - 2025-09-15
 ### Fixed
 - Disable copy/move action not working
 - Exception messages while copy/move files
