@@ -161,4 +161,14 @@ Fehler beim Verschieben:
   <data name="0x0006m" xml:space="preserve">
     <value>Quell- oder Zielverzeichniss sind nicht angegeben.</value>
   </data>
+  <data name="0x0007c" xml:space="preserve">
+    <value>Fehler beim Index erstellen.</value>
+  </data>
+  <data name="0x0007m" xml:space="preserve">
+    <value>Beim Erstellen des Index ist ein Fehler aufgetreten.
+
+{0}
+
+Weitere Fehlermeldungen dieser Art werden unterdrückt.</value>
+  </data>
 </root>

@@ -163,5 +163,27 @@ namespace OLKI.Programme.all2one.Properties {
                 return ResourceManager.GetString("0x0006m", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fehler beim Index erstellen. ähnelt.
+        /// </summary>
+        internal static string _0x0007c {
+            get {
+                return ResourceManager.GetString("0x0007c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Beim Erstellen des Index ist ein Fehler aufgetreten.
+        ///
+        ///{0}
+        ///
+        ///Weitere Fehlermeldungen dieser Art werden unterdrückt. ähnelt.
+        /// </summary>
+        internal static string _0x0007m {
+            get {
+                return ResourceManager.GetString("0x0007m", resourceCulture);
+            }
+        }
     }
 }

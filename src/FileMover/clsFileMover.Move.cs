@@ -205,7 +205,7 @@ namespace OLKI.Programme.all2one.src.FileMover
             }
             catch (Exception ex)
             {
-                _ = ex;
+                this._mainForm.Invoke((Func<DialogResult>)(() => MessageBox.Show(this._mainForm, string.Format(Stringtable._0x0007m, new object[] { ex.Message }), Stringtable._0x0007c, MessageBoxButtons.OK, MessageBoxIcon.Error)));
             }
         }
     }
