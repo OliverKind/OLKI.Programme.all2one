@@ -92,6 +92,11 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// Application MainForm to have it as owner for MessageBoxes
         /// </summary>
         private readonly MainForm _mainForm;
+
+        /// <summary>
+        /// Indicates whether exceptions should be suppressed during the operation.
+        /// </summary>
+        private bool _supressException = false;
         #endregion
 
         #region Properties

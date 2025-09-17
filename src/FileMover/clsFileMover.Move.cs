@@ -70,6 +70,7 @@ namespace OLKI.Programme.all2one.src.FileMover
         /// <param name="e">Provides data for the BackgroundWorker</param>
         public void Move(BackgroundWorker worker, DoWorkEventArgs e)
         {
+            this._supressException = false;
             worker.ReportProgress((int)ProcessStep.Move_Start, FORCE_REPORTING_FLAG);
             this.TimeProcessStart = DateTime.Now;
 
@@ -205,7 +206,9 @@ namespace OLKI.Programme.all2one.src.FileMover
             }
             catch (Exception ex)
             {
+                if (this._supressException) return;
                 this._mainForm.Invoke((Func<DialogResult>)(() => MessageBox.Show(this._mainForm, string.Format(Stringtable._0x0007m, new object[] { ex.Message }), Stringtable._0x0007c, MessageBoxButtons.OK, MessageBoxIcon.Error)));
+                this._supressException = true;
             }
         }
     }
