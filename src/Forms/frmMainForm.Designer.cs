@@ -63,6 +63,8 @@
             // 
             // txtDirectorySource
             // 
+            this.txtDirectorySource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDirectorySource.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtDirectorySource.Location = new System.Drawing.Point(82, 12);
             this.txtDirectorySource.Name = "txtDirectorySource";
@@ -72,6 +74,8 @@
             // 
             // txtDirectoryTarget
             // 
+            this.txtDirectoryTarget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDirectoryTarget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtDirectoryTarget.Location = new System.Drawing.Point(82, 38);
             this.txtDirectoryTarget.Name = "txtDirectoryTarget";
@@ -150,6 +154,8 @@
             // 
             // btnProcessCancel
             // 
+            this.btnProcessCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProcessCancel.Enabled = false;
             this.btnProcessCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnProcessCancel.Image = global::OLKI.Programme.all2one.Properties.Resources.Cancel;
@@ -172,13 +178,14 @@
             this.btnProcessStart.Name = "btnProcessStart";
             this.btnProcessStart.Size = new System.Drawing.Size(270, 68);
             this.btnProcessStart.TabIndex = 15;
-            this.btnProcessStart.Text = "Daten verschieben";
+            this.btnProcessStart.Text = "Daten kopieren/verschieben";
             this.btnProcessStart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcessStart.UseVisualStyleBackColor = true;
             this.btnProcessStart.Click += new System.EventHandler(this.btnProcessStart_Click);
             // 
             // btnDirectorySource
             // 
+            this.btnDirectorySource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDirectorySource.Image = global::OLKI.Programme.all2one.Properties.Resources.Browse;
             this.btnDirectorySource.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDirectorySource.Location = new System.Drawing.Point(442, 10);
@@ -192,6 +199,7 @@
             // 
             // btnDirectoryTarget
             // 
+            this.btnDirectoryTarget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDirectoryTarget.Image = global::OLKI.Programme.all2one.Properties.Resources.Browse;
             this.btnDirectoryTarget.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDirectoryTarget.Location = new System.Drawing.Point(442, 36);
@@ -235,6 +243,8 @@
             // 
             // epbProgress
             // 
+            this.epbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.epbProgress.AutoByteDimension = false;
             this.epbProgress.ByteDimension = OLKI.Toolbox.DirectoryAndFile.FileSize.Dimension.NoDimension;
             this.epbProgress.DecimalDigits = ((uint)(0u));
@@ -314,6 +324,9 @@
             // 
             // grbExceptions
             // 
+            this.grbExceptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbExceptions.Controls.Add(this.lsvExceptions);
             this.grbExceptions.Location = new System.Drawing.Point(12, 389);
             this.grbExceptions.Name = "grbExceptions";
@@ -324,6 +337,9 @@
             // 
             // lsvExceptions
             // 
+            this.lsvExceptions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lsvExceptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lsvExceptions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chLsvExceptionsSource,
@@ -379,7 +395,6 @@
             this.Controls.Add(this.lblDirectorySource);
             this.Controls.Add(this.txtDirectoryTarget);
             this.Controls.Add(this.txtDirectorySource);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
