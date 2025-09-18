@@ -39,12 +39,26 @@ namespace OLKI.Programme.all2one.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
         public global::System.Windows.Forms.FormWindowState MainForm_State {
             get {
                 return ((global::System.Windows.Forms.FormWindowState)(this["MainForm_State"]));
             }
             set {
                 this["MainForm_State"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        public bool SettingsUpgradet {
+            get {
+                return ((bool)(this["SettingsUpgradet"]));
+            }
+            set {
+                this["SettingsUpgradet"] = value;
             }
         }
     }
