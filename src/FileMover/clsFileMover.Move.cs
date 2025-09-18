@@ -180,7 +180,14 @@ namespace OLKI.Programme.all2one.src.FileMover
             }
             catch (Exception ex)
             {
-                this._mainForm.Invoke((Func<DialogResult>)(() => MessageBox.Show(this._mainForm, string.Format(Stringtable._0x0001m, new object[] { sourceFile.FullName, TargetFile.FullName, ex.Message }), Stringtable._0x0001c, MessageBoxButtons.OK, MessageBoxIcon.Error)));
+                ListViewItem NewItem = new ListViewItem();
+                this._mainForm.lsvExceptions.FillUpSubItems(NewItem);
+                NewItem.Tag = new object[] { sourceFile.FullName, TargetFile.FullName, ex.Message };
+                NewItem.Text = sourceFile.FullName;
+                NewItem.SubItems[1].Text = TargetFile.FullName;
+                NewItem.SubItems[2].Text = ex.Message;
+
+                Toolbox.Widgets.Invoke.ListViewInv.AddItem(this._mainForm.lsvExceptions, NewItem);
                 this.FileExceptions++;
                 return false;
             }

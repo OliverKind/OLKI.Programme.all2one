@@ -52,7 +52,13 @@
             this.rabCopyFiles = new System.Windows.Forms.RadioButton();
             this.rabMoveFiles = new System.Windows.Forms.RadioButton();
             this.chkCopyMoveKeepStucture = new System.Windows.Forms.CheckBox();
+            this.grbExceptions = new System.Windows.Forms.GroupBox();
+            this.lsvExceptions = new OLKI.Toolbox.Widgets.SortListView();
+            this.chLsvExceptionsSource = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chLsvExceptionsTarget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chLsvExceptionsException = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grbHandleExistingFiles.SuspendLayout();
+            this.grbExceptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDirectorySource
@@ -306,11 +312,54 @@
             this.chkCopyMoveKeepStucture.UseVisualStyleBackColor = true;
             this.chkCopyMoveKeepStucture.CheckedChanged += new System.EventHandler(this.chkCopyMoveKeepStucture_CheckedChanged);
             // 
+            // grbExceptions
+            // 
+            this.grbExceptions.Controls.Add(this.lsvExceptions);
+            this.grbExceptions.Location = new System.Drawing.Point(12, 389);
+            this.grbExceptions.Name = "grbExceptions";
+            this.grbExceptions.Size = new System.Drawing.Size(560, 260);
+            this.grbExceptions.TabIndex = 19;
+            this.grbExceptions.TabStop = false;
+            this.grbExceptions.Text = "Fehlerliste";
+            // 
+            // lsvExceptions
+            // 
+            this.lsvExceptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lsvExceptions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chLsvExceptionsSource,
+            this.chLsvExceptionsTarget,
+            this.chLsvExceptionsException});
+            this.lsvExceptions.ColumnWidths = ((System.Collections.Generic.List<int>)(resources.GetObject("lsvExceptions.ColumnWidths")));
+            this.lsvExceptions.GridLines = true;
+            this.lsvExceptions.HideSelection = false;
+            this.lsvExceptions.Location = new System.Drawing.Point(0, 19);
+            this.lsvExceptions.Name = "lsvExceptions";
+            this.lsvExceptions.Size = new System.Drawing.Size(554, 226);
+            this.lsvExceptions.TabIndex = 0;
+            this.lsvExceptions.UseCompatibleStateImageBehavior = false;
+            this.lsvExceptions.View = System.Windows.Forms.View.Details;
+            // 
+            // chLsvExceptionsSource
+            // 
+            this.chLsvExceptionsSource.Text = "Quelledatei";
+            this.chLsvExceptionsSource.Width = 180;
+            // 
+            // chLsvExceptionsTarget
+            // 
+            this.chLsvExceptionsTarget.Text = "Zieldatei";
+            this.chLsvExceptionsTarget.Width = 180;
+            // 
+            // chLsvExceptionsException
+            // 
+            this.chLsvExceptionsException.Text = "Fehler";
+            this.chLsvExceptionsException.Width = 180;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 395);
+            this.ClientSize = new System.Drawing.Size(584, 661);
+            this.Controls.Add(this.grbExceptions);
             this.Controls.Add(this.chkCopyMoveKeepStucture);
             this.Controls.Add(this.rabMoveFiles);
             this.Controls.Add(this.rabCopyFiles);
@@ -341,6 +390,7 @@
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.grbHandleExistingFiles.ResumeLayout(false);
             this.grbHandleExistingFiles.PerformLayout();
+            this.grbExceptions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +421,11 @@
         private System.Windows.Forms.RadioButton rabCopyFiles;
         private System.Windows.Forms.RadioButton rabMoveFiles;
         private System.Windows.Forms.CheckBox chkCopyMoveKeepStucture;
+        private System.Windows.Forms.GroupBox grbExceptions;
+        private System.Windows.Forms.ColumnHeader chLsvExceptionsSource;
+        private System.Windows.Forms.ColumnHeader chLsvExceptionsTarget;
+        private System.Windows.Forms.ColumnHeader chLsvExceptionsException;
+        public Toolbox.Widgets.SortListView lsvExceptions;
     }
 }
 

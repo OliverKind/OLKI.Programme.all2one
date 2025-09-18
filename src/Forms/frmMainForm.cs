@@ -307,6 +307,7 @@ namespace OLKI.Programme.all2one.src.Forms
             this.btnProcessStart.Enabled = false;
             this.btnProcessPause.Enabled = true;
             this.btnProcessCancel.Enabled = true;
+            this.lsvExceptions.Items.Clear();
 
             this._locker.Set();
             if (!this._bgwWorker.IsBusy) this._bgwWorker.RunWorkerAsync();
