@@ -127,32 +127,6 @@ namespace OLKI.Programme.all2one.src.Forms
         }
 
         #region Form events
-        private void btnDirectorySource_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
-            {
-                Description = Stringtable._0x0003,
-                SelectedPath = this.txtDirectorySource.Text
-            };
-            if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                this.txtDirectorySource.Text = FolderBrowserDialog.SelectedPath;
-            }
-        }
-
-        private void btnDirectoryTarget_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
-            {
-                Description = Stringtable._0x0004,
-                SelectedPath = this.txtDirectoryTarget.Text
-            };
-            if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                this.txtDirectoryTarget.Text = FolderBrowserDialog.SelectedPath;
-            }
-        }
-
         private void MainForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             System.Reflection.Assembly Assembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -182,6 +156,34 @@ namespace OLKI.Programme.all2one.src.Forms
         {
             // Check for Updates for the Apllication
             if (Settings.Default.AppUpdate_CheckAtStartUp) Program.CheckForUpdate(this, true);
+        }
+
+        #region Controle Buttons
+        #region Options
+        private void btnDirectorySource_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
+            {
+                Description = Stringtable._0x0003,
+                SelectedPath = this.txtDirectorySource.Text
+            };
+            if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                this.txtDirectorySource.Text = FolderBrowserDialog.SelectedPath;
+            }
+        }
+
+        private void btnDirectoryTarget_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog FolderBrowserDialog = new FolderBrowserDialog
+            {
+                Description = Stringtable._0x0004,
+                SelectedPath = this.txtDirectoryTarget.Text
+            };
+            if (FolderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                this.txtDirectoryTarget.Text = FolderBrowserDialog.SelectedPath;
+            }
         }
 
         private void btnHandleExistingFile_SetDefault_Click(object sender, EventArgs e)
@@ -270,8 +272,9 @@ namespace OLKI.Programme.all2one.src.Forms
             Settings.Default.DirectoryTarget = this.txtDirectoryTarget.Text;
             Settings.Default.Save();
         }
+        #endregion
 
-        #region Controle Buttons
+        #region Process contrle
         private void btnProcessCancel_Click(object sender, EventArgs e)
         {
             this.btnProcessStart.Enabled = true;
@@ -312,6 +315,7 @@ namespace OLKI.Programme.all2one.src.Forms
             this._locker.Set();
             if (!this._bgwWorker.IsBusy) this._bgwWorker.RunWorkerAsync();
         }
+        #endregion
         #endregion
         #endregion
 
