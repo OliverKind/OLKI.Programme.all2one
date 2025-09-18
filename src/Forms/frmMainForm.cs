@@ -68,6 +68,8 @@ namespace OLKI.Programme.all2one.src.Forms
         {
             this._systemChanged = true;
             InitializeComponent();
+            if (Settings_AppVar.Default.MainForm_State != FormWindowState.Minimized) this.WindowState = (FormWindowState)Settings_AppVar.Default.MainForm_State;
+            if (Settings_AppVar.Default.MainForm_State == FormWindowState.Normal) this.Size = Settings_AppVar.Default.MainForm_Size;
 
             this._bgwWorker = new BackgroundWorker
             {
@@ -127,6 +129,13 @@ namespace OLKI.Programme.all2one.src.Forms
         }
 
         #region Form events
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal) Settings_AppVar.Default.MainForm_Size = this.Size;
+            Settings_AppVar.Default.MainForm_State = this.WindowState;
+            Settings_AppVar.Default.Save();
+        }
+
         private void MainForm_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             System.Reflection.Assembly Assembly = System.Reflection.Assembly.GetExecutingAssembly();
