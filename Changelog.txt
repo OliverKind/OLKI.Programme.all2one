@@ -1,4 +1,15 @@
-﻿## [2.0.3.8] - 2025-09-15
+﻿## [2.1.0.9] - 2025-09-18
+### Added
+- Create target path if not exists
+- Exception list while copy/move files
+- Exception message while create index
+- Resizeable MainForm
+- Supress multiple exception messages while create index
+
+### Remove
+- Exception message while copy/move files
+
+## [2.0.3.8] - 2025-09-15
 ### Added
 - Check for empty source-/target-Path
 
