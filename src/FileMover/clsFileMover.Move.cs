@@ -74,6 +74,7 @@ namespace OLKI.Programme.all2one.src.FileMover
             worker.ReportProgress((int)ProcessStep.Move_Start, FORCE_REPORTING_FLAG);
             this.TimeProcessStart = DateTime.Now;
 
+            if (!new DirectoryInfo(Settings.Default.DirectoryTarget).Exists) new DirectoryInfo(Settings.Default.DirectoryTarget).Create();
             if (Settings.Default.CreateIndex) this.WriteIndex("", false);
             this.MoveRecursive(new DirectoryInfo(Settings.Default.DirectorySource), worker, e);
             worker.ReportProgress((int)ProcessStep.Move_Finish, FORCE_REPORTING_FLAG);
